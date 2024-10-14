@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
   AppstoreAddOutlined,
+  CaretRightOutlined,
   DesktopOutlined,
+  FacebookOutlined,
   FileOutlined,
+  InstagramOutlined,
   LogoutOutlined,
   PieChartOutlined,
   TeamOutlined,
+  TwitterOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Breadcrumb, Button, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Button, Col, Layout, Menu, Row, theme } from "antd";
 
 import {
   BrowserRouter as Router,
@@ -126,7 +130,7 @@ const App: React.FC = () => {
         <Layout>
           <Content className={`${!collapsed ? "ml-[200px]" : "ml-[0px]"}`}>
             <div
-              className="p-5 mx-5"
+              className=""
               style={{
                 minHeight: 360,
                 background: colorBgContainer,
@@ -141,11 +145,79 @@ const App: React.FC = () => {
             </div>
           </Content>
           <Footer
+            className={`${
+              !collapsed ? "ml-[200px]" : "ml-[0px]"
+            } pt-[100px] w-full  bg-cover bg-center py-20 pr-20`}
             style={{
-              textAlign: "center",
+              backgroundImage: `url(${require("./assets/img/bgrd.jpg")})`,
             }}
           >
-            Comox Valley Conference ©{new Date().getFullYear()}
+            <Row gutter={[32, 32]}>
+              <Col span={8}>
+                <h2 className="text-headingColor text-[40px] font-bold mb-7 font-arizonia ">
+                  {" "}
+                  About us{" "}
+                </h2>
+                <p className="text-gray-500 text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta nisi quod hic neque maxime cupiditate itaque, illo
+                  excepturi praesentium veniam cum accusamus amet voluptatibus
+                  laudantium harum numquam minus ipsum repudiandae adipisci.
+                  Odio velit molestias quibusdam quod esse quaerat at
+                  dignissimos deserunt odit, quos dolores, aperiam aut!
+                  Delectus, a sequi. Veritatis?
+                </p>
+              </Col>
+
+              <Col span={8}>
+                <h2 className="text-headingColor text-[40px] font-bold mb-7 font-arizonia ">
+                  {" "}
+                  Links{" "}
+                </h2>
+
+                <ul className="text-[20px] text-gray-500 cursor-pointer leading-[2]">
+                  <li>
+                    <CaretRightOutlined />
+                    Presenters
+                  </li>
+                  <li>
+                    <CaretRightOutlined />
+                    About
+                  </li>
+                  <li>
+                    <CaretRightOutlined />
+                    Programs
+                  </li>
+                  <li>
+                    <CaretRightOutlined />
+                    Conferences
+                  </li>
+                </ul>
+              </Col>
+              <Col span={8} className="lg:ml-[-100px]">
+                <h2 className="text-headingColor text-[40px] font-bold mb-7 font-arizonia ">
+                  {" "}
+                  Connect with us{" "}
+                </h2>
+
+                <ul className="text-[20px] text-gray-500 cursor-pointer line leading-[2]">
+                  <li>
+                    <FacebookOutlined />
+                    &nbsp; Facebook
+                  </li>
+                  <li>
+                    <InstagramOutlined />
+                    &nbsp; Instagram
+                  </li>
+                  <li>
+                    <TwitterOutlined />
+                    &nbsp; Twitter
+                  </li>
+                </ul>
+              </Col>
+            </Row>
+
+            {/* Comox Valley Conference ©{new Date().getFullYear()} */}
           </Footer>
         </Layout>
       </Layout>

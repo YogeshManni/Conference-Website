@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        arizonia: ["Arizonia", "cursive"],
+      },
+      colors: {
+        headingColor: "#f15d30",
+      },
+    },
   },
   plugins: [],
 };

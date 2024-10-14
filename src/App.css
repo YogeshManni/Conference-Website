@@ -19,3 +19,12 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
+.onhover {
+  background-color: #f15d30 !important;
+  color: white !important;
+}
+
+body {
+  overflow-x: hidden;
+}
