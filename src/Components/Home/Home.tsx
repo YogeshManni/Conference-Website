@@ -21,7 +21,7 @@ export const Heading = ({ tagline, subHeading, src }: any) => {
         alt="Comox Valley Programs"
       ></img>
       <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="absolute inset-0 flex top-[30%] left-[15%] flex flex-col">
+      <div className="absolute inset-0 flex top-[30%] left-[15%]  flex-col">
         <span className="text-headingColor font-bold font-arizonia text-[3rem] ">
           {tagline}
         </span>
@@ -68,9 +68,7 @@ function Home() {
           />
         </div>
       </Carousel>
-
       {/* Conference section  */}
-
       <section
         className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
         style={{
@@ -107,7 +105,7 @@ function Home() {
                     {item.registrations} Registrations
                   </span>
                 </a>
-                <div className="text mx-auto w-[90%] relative mt-[-40px] bg-white shadow-lg p-4">
+                <div className="text mx-auto w-[90%] relative mt-[-40px] bg-white shadow-spread p-4">
                   <span className="block text-[12px] text-headingColor font-[700] uppercase mb-2">
                     {item.speaker}
                   </span>
@@ -147,9 +145,10 @@ function Home() {
           </Button>
         </div>
       </section>
-
       {/* Presentors section */}
-
+      {
+        // #region Presenters
+      }
       <section
         className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
         style={{
@@ -175,6 +174,7 @@ function Home() {
               lg={{ flex: "30%" }}
             >
               <Card
+                className="shadow-spread"
                 hoverable
                 style={{ width: 240 }}
                 cover={
@@ -191,13 +191,16 @@ function Home() {
             </Col>
           ))}
         </Row>
-
         <div className="flex justify-center items-center mt-5">
           <Button className="bg-headingColor text-white onhover" size="large">
             View All Presenters
           </Button>
         </div>
       </section>
+
+      {
+        // #endregion Presenters
+      }
 
       {/* Program section */}
       <section className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0">
