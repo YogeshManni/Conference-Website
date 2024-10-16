@@ -5,6 +5,7 @@ import img2 from "../../assets/img/img2.jpg";
 import img3 from "../../assets/img/img3.jpg";
 import img4 from "../../assets/img/img4.jpg";
 import {
+  CalendarOutlined,
   EyeOutlined,
   HeatMapOutlined,
   PhoneOutlined,
@@ -111,7 +112,8 @@ function Home() {
                   </span>
                   <h3 className="text-[24px] font-[500] mb-0">
                     <a href="#" className="text-black hover:text-headingColor">
-                      {item.name}
+                      {item.name} -{" "}
+                      <span className="text-headingColor"> Day {idx + 1}</span>
                     </a>
                   </h3>
                   <p className="text-headingColor  flex items-center text-[13px] mt-5">
@@ -122,28 +124,43 @@ function Home() {
                     {item.description}
                   </p>
                   <ul className="mt-4">
-                    <li className="text-[13px] text-gray-700 flex items-center">
+                    {/* <li className="text-[13px] text-gray-700 flex items-center">
                       <PhoneOutlined /> &nbsp; Contact : {item.contact}
+                    </li> */}
+                    <li className="text-[13px] text-gray-700 flex items-start">
+                      <span className="flex-shrink-0 whitespace-nowrap">
+                        <UserOutlined /> <b>Co-hosts :</b>
+                      </span>
+                      <span className="ml-2">{item.hosts}</span>
                     </li>
-                    <li className="text-[13px] text-gray-700 flex items-center">
-                      <UserOutlined /> &nbsp; Host : {item.hosts}
-                    </li>
-                    <li className="text-[13px] text-[#007bff] underline cursor-pointer hover:text-[#0056b3] mt-2">
-                      <EyeOutlined />
-                      <a href="#"> View Event</a>
+
+                    <li className="text-[13px] text-gray-700 flex items-start">
+                      <span className="flex-shrink-0 whitespace-nowrap">
+                        <CalendarOutlined /> <b>Date :</b>
+                      </span>
+                      <span className="ml-2">{item.date}</span>
                     </li>
                   </ul>
+
+                  <div className="flex justify-around mt-5">
+                    <Button className="bg-secondary text-white ">
+                      View Event
+                    </Button>
+                    <Button className="bg-headingColor text-white">
+                      Register
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Col>
           ))}
         </Row>
 
-        <div className="flex justify-center items-center">
+        {/* <div className="flex justify-center items-center">
           <Button className="bg-headingColor text-white onhover" size="large">
             View All Events
           </Button>
-        </div>
+        </div> */}
       </section>
       {/* Presentors section */}
       {

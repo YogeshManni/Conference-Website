@@ -2,36 +2,38 @@ export const events = [
   {
     img: "../img/img1.jpg",
     name: "Comox Valley Writing Conference",
+
     registrations: 120,
     date: "2024-01-15",
     description:
       "Join us for a day of inspiring talks, workshops, and networking opportunities with renowned authors and industry professionals.",
-    hosts: ["North Island College"],
-    location: "Comox Valley Civic Centre",
+    hosts: "CV Writers Society & North Island College",
+    location: "North Island College - Tyee hall",
     speaker: "Dr. Jane Smith",
     contact: "250-865-9856",
   },
   {
     img: "../img/img2.jpg",
-    name: "Bali Adventure Writing Retreat",
+    name: "Comox Valley Writing Conference",
+
     registrations: 75,
     date: "2024-02-10",
     description:
       "A week-long retreat in beautiful Bali focused on creative writing, guided by experienced authors and writing coaches.",
-    hosts: ["Creative Writing Retreats"],
-    location: "Ubud, Bali",
+    hosts: "CV Writers Society & North Island College",
+    location: "North Island College - Tyee hall",
     speaker: "John Doe",
     contact: "250-865-9856",
   },
   {
     img: "../img/img3.jpg",
-    name: "Tech and Writing Symposium",
+    name: "Comox Valley Writing Conference",
     registrations: 200,
     date: "2024-03-20",
     description:
       "Explore the intersection of technology and writing at this two-day symposium featuring workshops, panels, and keynotes.",
-    hosts: ["Tech Writers Association"],
-    location: "Downtown Conference Center",
+    hosts: "CV Writers Society & North Island College",
+    location: "North Island College - Tyee hall",
     speaker: "Emily Johnson",
     contact: "250-865-9856",
   },
