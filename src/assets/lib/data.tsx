@@ -11,6 +11,7 @@ export const events = [
     location: "North Island College - Tyee hall",
     speaker: "Dr. Jane Smith",
     contact: "250-865-9856",
+    price: 80,
   },
   {
     img: "../img/img2.jpg",
@@ -24,6 +25,7 @@ export const events = [
     location: "North Island College - Tyee hall",
     speaker: "John Doe",
     contact: "250-865-9856",
+    price: 60,
   },
   {
     img: "../img/img3.jpg",
@@ -36,6 +38,7 @@ export const events = [
     location: "North Island College - Tyee hall",
     speaker: "Emily Johnson",
     contact: "250-865-9856",
+    price: 100,
   },
 ];
 
