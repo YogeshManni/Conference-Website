@@ -1,11 +1,12 @@
 import { Button, Card, Carousel, Col, Collapse, List, Row, Space } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../../assets/img/img1.jpg";
 import img2 from "../../assets/img/img2.jpg";
 import img3 from "../../assets/img/img3.jpg";
 import img4 from "../../assets/img/img4.jpg";
 import {
   CalendarOutlined,
+  DollarOutlined,
   EyeOutlined,
   HeatMapOutlined,
   PhoneOutlined,
@@ -13,6 +14,8 @@ import {
 } from "@ant-design/icons";
 import Meta from "antd/es/card/Meta";
 import { events, presenters, programs } from "../../assets/lib/data";
+import { Link } from "react-router-dom";
+import Profile from "../Profile/Profile";
 export const Heading = ({ tagline, subHeading, src }: any) => {
   return (
     <>
@@ -35,6 +38,18 @@ export const Heading = ({ tagline, subHeading, src }: any) => {
 };
 
 function Home() {
+  interface Presenter {
+    img: string; // URL or path to the presenter's image
+    name: string; // Name of the presenter
+    about: string; // Description or biography of the presenter
+  }
+
+  const [showProfile, setShowProfile] = React.useState<boolean>(false);
+  const [currUser, setCurrUser] = useState<Presenter>();
+  const hideProfile = () => {
+    setShowProfile(false);
+  };
+
   return (
     <>
       <Carousel effect="fade" arrows infinite={true} autoplay>
@@ -69,7 +84,10 @@ function Home() {
           />
         </div>
       </Carousel>
-      {/* Conference section  */}
+
+      {
+        // region Conference
+      }
       <section
         className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
         style={{
@@ -140,6 +158,13 @@ function Home() {
                       </span>
                       <span className="ml-2">{item.date}</span>
                     </li>
+
+                    <li className="text-[13px] text-gray-700 flex items-start">
+                      <span className="flex-shrink-0 whitespace-nowrap">
+                        <DollarOutlined /> <b>Price :</b>
+                      </span>
+                      <span className="ml-2">${item.price}</span>
+                    </li>
                   </ul>
 
                   <div className="flex justify-around mt-5">
@@ -193,6 +218,10 @@ function Home() {
               <Card
                 className="shadow-spread"
                 hoverable
+                onClick={() => {
+                  setCurrUser(item);
+                  setShowProfile(true);
+                }}
                 style={{ width: 240 }}
                 cover={
                   <img alt="example" src={item.img} className="h-[350px]" />
@@ -209,9 +238,11 @@ function Home() {
           ))}
         </Row>
         <div className="flex justify-center items-center mt-5">
-          <Button className="bg-headingColor text-white onhover" size="large">
-            View All Presenters
-          </Button>
+          <Link to="/presenters">
+            <Button className="bg-headingColor text-white onhover" size="large">
+              View All Presenters
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -292,6 +323,18 @@ function Home() {
             View All Programs
           </Button>
         </div>
+      </section>
+      {
+        //   #region Profile
+      }
+      <section className="showProfile">
+        {
+          <Profile
+            open={showProfile}
+            hideProfile={hideProfile}
+            data={currUser}
+          />
+        }
       </section>
     </>
   );
