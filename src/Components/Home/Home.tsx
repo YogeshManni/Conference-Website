@@ -52,7 +52,13 @@ function Home() {
 
   return (
     <>
-      <Carousel effect="fade" arrows infinite={true} autoplay>
+      <Carousel
+        effect="fade"
+        arrows
+        infinite={true}
+        autoplay
+        data-aos="fade-up"
+      >
         <div className="relative">
           <Heading
             tagline={" Comox Valley Conferences 2024"}
@@ -112,7 +118,7 @@ function Home() {
               md={{ flex: "40%" }}
               lg={{ flex: "30%" }}
             >
-              <div className="project-wrap mb-8">
+              <div className="project-wrap mb-8" data-aos="fade-left">
                 <a
                   href="#"
                   className="block h-72 bg-cover bg-center relative"
@@ -171,9 +177,11 @@ function Home() {
                     <Button className="bg-secondary text-white ">
                       View Event
                     </Button>
-                    <Button className="bg-headingColor text-white">
-                      Register
-                    </Button>
+                    <Link to={`/register/${idx}`}>
+                      <Button className="bg-headingColor text-white">
+                        Register
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -216,6 +224,7 @@ function Home() {
               lg={{ flex: "30%" }}
             >
               <Card
+                data-aos="fade-up"
                 className="shadow-spread"
                 hoverable
                 onClick={() => {
@@ -263,7 +272,7 @@ function Home() {
         </Row>
 
         {programs.slice(0, 3).map((item, idx) => (
-          <Row className="mb-5">
+          <Row className="mb-5" data-aos="fade-left">
             <Col key={idx}>
               <Collapse
                 collapsible="header"

@@ -4,12 +4,14 @@ import {
   PhoneOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Button, Col, Form, Input, Row } from "antd";
+import { Button, Col, notification, Form, Input, Row } from "antd";
 import Search from "antd/es/input/Search";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
+import { openNotificationWithIcon } from "../../assets/lib/notification";
 
 function About() {
+  const [api, contextHolder] = notification.useNotification();
   const onFinish = (values: any) => {
     console.log("Received values of form: ", values);
   };
@@ -26,7 +28,7 @@ function About() {
         <div className="flex flex-col lg:flex-row ">
           {/* Content Column */}
           <div className="lg:w-1/2 md:w-full sm:w-full mb-10 lg:mb-0">
-            <div className="relative p-8">
+            <div className="relative p-8 " data-aos="fade-up">
               <div className="mb-10">
                 <span className="block text-headingColor font-arizonia text-[50px] font-bold mb-2">
                   About CVRS
@@ -65,7 +67,10 @@ function About() {
           </div>
 
           {/* Image Column */}
-          <div className="lg:w-1/2 md:w-full sm:w-full relative">
+          <div
+            className="lg:w-1/2 md:w-full sm:w-full relative"
+            data-aos="fade-left"
+          >
             <div className="relative p-8">
               <div className="absolute bottom-4 left-20 bg-orange-500 text-white text-center rounded-full p-2 w-3/4">
                 <h2 className="text-xl">hkjhjk</h2>
@@ -86,7 +91,10 @@ function About() {
         {
           //#region history
         }
-        <div className="flex flex-col lg:flex-row bg-secondary">
+        <div
+          className="flex flex-col lg:flex-row bg-secondary"
+          data-aos="fade-right"
+        >
           {/* Image Column */}
           <div className="lg:w-1/2 md:w-full sm:w-full relative">
             <div className="relative p-8">
@@ -105,7 +113,10 @@ function About() {
           </div>
 
           {/* Content Column */}
-          <div className="lg:w-1/2 md:w-full sm:w-full mb-10 lg:mb-0">
+          <div
+            className="lg:w-1/2 md:w-full sm:w-full mb-10 lg:mb-0"
+            data-aos="fade-up"
+          >
             <div className="relative p-8">
               <div className="mb-10">
                 <span className="block font-arizonia text-[50px] font-bold text-headingColor  mb-2">
@@ -141,7 +152,11 @@ function About() {
           // region Newsletter
         }
 
-        <Row className="py-[100px] flex justify-center items-center flex-col">
+        <Row
+          className="py-[100px] flex justify-center items-center flex-col"
+          data-aos="fade-up"
+        >
+          {contextHolder}
           <div className="bg-gradient-to-r from-gray-200 via-gray-50 to-gray-200 py-16 font-[sans-serif]">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 p-4">
               <div className="w-full text-center lg:text-left">
@@ -163,7 +178,14 @@ function About() {
                     required
                   />
                   <button
-                    type="submit"
+                    onClick={() =>
+                      openNotificationWithIcon(
+                        api,
+                        "success",
+                        "Subscribed successfully",
+                        "You have been successfully subscribed to our newsletter !"
+                      )
+                    }
                     className="bg-headingColor  text-white text-base font-semibold tracking-wide py-3.5 px-6 border border-blue-600 rounded-r-lg outline-none"
                   >
                     Subscribe
@@ -178,7 +200,10 @@ function About() {
           // region Contact
         }
         <Row className="w-full flex items-center justify-center ">
-          <Col className="w-full xl:w-1/2 relative h-[600px] shadow-spread p-[30px]">
+          <Col
+            className="w-full xl:w-1/2 relative h-[600px] shadow-spread p-[30px]"
+            data-aos="fade-right"
+          >
             {/* Image as background */}
             <img
               src="./img/img3.jpg"
@@ -240,6 +265,7 @@ function About() {
           <Col
             id="contact"
             className="mt-10 xl:mt-0 w-full h-[600px]  xl:w-1/2 flex items-center justify-center flex-col shadow-spread"
+            data-aos="fade-left"
           >
             <span className="font-bold font-arizonia text-headingColor text-[50px] mt-10 lg:mt-0">
               {" "}
@@ -298,6 +324,14 @@ function About() {
                   htmlType="submit"
                   size="large"
                   className="bg-secondary"
+                  onClick={() =>
+                    openNotificationWithIcon(
+                      api,
+                      "success",
+                      "Message Sent",
+                      "You Message has been recieved by CVWS, someone will contact you shortly !!"
+                    )
+                  }
                 >
                   Send Message
                 </Button>
