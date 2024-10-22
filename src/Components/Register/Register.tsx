@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row, Steps } from "antd";
 import { events } from "../../assets/lib/data";
 import { Link, useLocation } from "react-router-dom";
-import Payment from "./Payment"; // Adjust the path as needed
-import Status from "./Status"; // Adjust the path as needed
+import Payment from "./Payment"; 
+import Status from "./Status"; 
 import { UserOutlined, FormOutlined, DollarOutlined } from "@ant-design/icons";
 
 function Register() {
