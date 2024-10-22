@@ -1,27 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { eventData, Event as EventType } from "../../data/eventData";
 import useEventCart, { parseCost } from "../../hooks/useEventCart";
 import ReviewOrder from "../ReviewOrder";
 
 const Event: React.FC = () => {
-  const { selectedEvents, totalCost, toggleEventSelection, isEventSelected } = useEventCart();
-
-  // State to control the modal visibility
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  // Function to handle Pay button click
-  const handlePay = () => {
-    setModalOpen(true);
-  };
-
-  // Create an array of titles of selected events
-  const selectedEventTitles = selectedEvents.map(({ event }) => event.title);
-
-  // Create an array of prices of selected events (show "Free" for free events)
-  const selectedEventPrices = selectedEvents.map(({ event, priceIndex }) => {
-    const { isFree, prices } = parseCost(event.cost);
-    return isFree ? "Free" : prices[priceIndex ?? 0]; // Set "Free" if the event is free
-  });
+  const { 
+    selectedEvents, 
+    totalCost, 
+    toggleEventSelection, 
+    isEventSelected, 
+    selectedEventTitles, 
+    selectedEventPrices, 
+    isModalOpen, 
+    handlePay, 
+    closeModal 
+  } = useEventCart();
 
   return (
     <div>
@@ -86,7 +79,7 @@ const Event: React.FC = () => {
                         isEventSelected(event) ? "bg-red-500" : "bg-green-500"
                       }`}
                     >
-                      {isEventSelected(event) ? "Deselect" : <><strong>Add to cart:</strong> Free</>}
+                      {isEventSelected(event) ? "Deselect" : "Add to cart: Free"}
                     </button>
                   ) : (
                     prices.map((price: string, priceIndex: number) => (
@@ -99,7 +92,7 @@ const Event: React.FC = () => {
                             : "bg-green-500"
                         }`}
                       >
-                        {isEventSelected(event, priceIndex) ? "Deselect" : <><strong>Add to cart:</strong> {price}</>}
+                        {isEventSelected(event, priceIndex) ? "Deselect" : `Add to cart: ${price}`}
                       </button>
                     ))
                   )}
@@ -130,7 +123,7 @@ const Event: React.FC = () => {
       {/* Floating Total Cost with Review Button */}
       <div 
         className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-gray-600 transition-colors duration-200"
-        onClick={handlePay} // Trigger handlePay on click
+        onClick={handlePay}
       >
         <h2 className="text-xl font-semibold">
           Pay: ${totalCost.toFixed(2)}
@@ -144,7 +137,7 @@ const Event: React.FC = () => {
           titles={selectedEventTitles} 
           prices={selectedEventPrices} 
           totalCost={totalCost} 
-          onClose={() => setModalOpen(false)} // Function to close modal
+          onClose={closeModal}
         />
       )}
     </div>
