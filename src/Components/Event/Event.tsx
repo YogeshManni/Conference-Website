@@ -13,13 +13,6 @@ const Event: React.FC = () => {
         <h1 className="text-white text-center text-3xl font-bold">Events</h1>
       </header>
 
-      {/* Display total cost */}
-      <div className="text-center mt-4">
-        <h2 className="text-xl font-semibold">
-          Total Cost: ${totalCost.toFixed(2)}
-        </h2>
-      </div>
-
       {/* Events Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {eventData.map((event: EventType, index: number) => {
@@ -93,7 +86,9 @@ const Event: React.FC = () => {
                     prices.map((price: string, priceIndex: number) => (
                       <button
                         key={priceIndex}
-                        onClick={() => toggleEventSelection(event, priceIndex)}
+                        onClick={() =>
+                          toggleEventSelection(event, priceIndex)
+                        }
                         className={`px-4 py-2 mr-2 mb-2 rounded-lg text-white ${
                           isEventSelected(event, priceIndex)
                             ? "bg-red-500"
@@ -132,6 +127,13 @@ const Event: React.FC = () => {
             </div>
           );
         })}
+      </div>
+
+      {/* Floating Total Cost */}
+      <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg">
+        <h2 className="text-xl font-semibold">
+          Pay: ${totalCost.toFixed(2)}
+        </h2>
       </div>
     </div>
   );
