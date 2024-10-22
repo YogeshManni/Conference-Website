@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        arizonia: ["Arizonia", "cursive"],
+        paytone: ["Paytone One", "sans-serif"],
       },
       colors: {
         headingColor: "#f15d30",
