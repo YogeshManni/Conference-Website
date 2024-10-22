@@ -5,6 +5,10 @@ interface HeadingProps {
   tagline: string;
   subHeading: string;
   src: string;
+  callToAction: {
+    text: string;
+    link: string;
+  };
 }
 
 interface SectionProps {
@@ -12,9 +16,13 @@ interface SectionProps {
   subHeading: string;
   src: string;
   reverse?: boolean;
+  callToAction: {
+    text: string;
+    link: string;
+  };
 }
 
-const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src }) => {
+const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src, callToAction }) => {
   return (
     <div className="relative w-full h-screen">
       <img
@@ -23,15 +31,14 @@ const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src }) => {
         alt="Comox Valley Programs"
       />
       <div className="absolute inset-0 flex items-center p-8 lg:pl-24">
-        {/* Semi-transparent black rectangle with rounded corners */}
         <div className="bg-black bg-opacity-75 max-w-2xl rounded-lg p-6">
           <h1 className="text-white font-bold text-5xl md:text-6xl">{tagline}</h1>
           <p className="text-white text-lg md:text-xl mt-4">{subHeading}</p>
           <a
-            href={homeData[0].callToAction.link}
+            href={callToAction.link}
             className="mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
           >
-            {homeData[0].callToAction.text}
+            {callToAction.text}
           </a>
         </div>
       </div>
@@ -40,17 +47,17 @@ const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src }) => {
 };
 
 // Section component with flexible layout
-const Section: React.FC<SectionProps> = ({ tagline, subHeading, src, reverse }) => {
+const Section: React.FC<SectionProps> = ({ tagline, subHeading, src, reverse, callToAction }) => {
   return (
     <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center justify-between py-16 px-8 bg-white max-w-screen-xl mx-auto`}>
       <div className="w-full md:w-1/2 p-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{tagline}</h2>
         <p className="text-lg mb-6">{subHeading}</p>
         <a
-          href={homeData[0].callToAction.link}
+          href={callToAction.link}
           className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
         >
-          {homeData[0].callToAction.text}
+          {callToAction.text}
         </a>
       </div>
       <div className="w-full md:w-1/2 p-4">
@@ -68,20 +75,21 @@ const Home: React.FC = () => {
           tagline={homeData[0].headline}
           subHeading={homeData[0].subheadline}
           src={homeData[0].backgroundImage}
+          callToAction={homeData[0].callToAction}
         />
       </div>
-      {/* Section 1 - Text on left, Image on right */}
       <Section
         tagline={homeData[1].headline}
         subHeading={homeData[1].subheadline}
-        src={homeData[1].backgroundImage} 
+        src={homeData[1].backgroundImage}
+        callToAction={homeData[1].callToAction}
       />
-      {/* Section 2 - Image on left, Text on right */}
       <Section
         tagline={homeData[2].headline}
         subHeading={homeData[2].subheadline}
-        src={homeData[2].backgroundImage} 
+        src={homeData[2].backgroundImage}
         reverse
+        callToAction={homeData[2].callToAction}
       />
     </>
   );

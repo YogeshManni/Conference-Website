@@ -8,7 +8,7 @@ const homeData = [
       "Join us for a weekend of inspiration, workshops, and connection as we gather writers, authors, and enthusiasts to explore the art of storytelling and the craft of writing.",
     callToAction: {
       text: "Check out our events",
-      link: "/events",
+      link: "/event",
     },
   },
   {
