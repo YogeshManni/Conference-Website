@@ -1,112 +1,77 @@
-import { Button, Card, Col, Row } from "antd";
-import Meta from "antd/es/card/Meta";
 import React, { useState } from "react";
-import { presenters } from "../../assets/lib/data";
-import Profile from "../Profile/Profile";
-import { Interface } from "readline";
+import { presentersData } from "../../data/presentersData";
+import PresenterModal from "./PresenterModal";
 
-function Presenters() {
-  interface Presenter {
-    img: string; // URL or path to the presenter's image
-    name: string; // Name of the presenter
-    about: string; // Description or biography of the presenter
-  }
+const Presenters: React.FC = () => {
+  const [selectedPresenter, setSelectedPresenter] = useState<null | typeof presentersData[0]>(null);
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  const [showProfile, setShowProfile] = React.useState<boolean>(false);
-  const [currUser, setCurrUser] = useState<Presenter>();
-  const hideProfile = () => {
-    setShowProfile(false);
+  const openModal = (presenter: typeof presentersData[0]) => {
+    setSelectedPresenter(presenter);
+    setModalOpen(true);
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedPresenter(null);
+  };
+
   return (
-    <>
-      {
-        // #region hero
-      }
-      <section className="hero">
-        <img
-          src="./img/presenter.jpg"
-          className="h-[100vh] w-[100%] object-cover"
-        ></img>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="absolute inset-0 flex top-[30%] left-[25%]  flex-col">
-          <span className="text-headingColor font-bold font-arizonia text-[3rem] ">
-            Meet Our Esteemed Presenters
-          </span>
-          <span className=" text-white md:text-[2rem] font-bold text-[20px]">
-            Experts, Innovators, and Thought Leaders Sharing Their Knowledge and
-            Passion
-          </span>
-        </div>
-      </section>
+    <div>
+      {/* Header Section */}
+      <header className="bg-gray-800 py-4">
+        <h1 className="text-white text-center text-3xl font-bold">Presenters</h1>
+      </header>
 
-      {
-        // #endregion hero
-      }
+      {/* Presenters Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+        {presentersData.map((presenter, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-lg h-full flex flex-col"
+          >
+            {/* Presenter Image */}
+            {presenter.img && (
+              <img
+                src={presenter.img}
+                alt={presenter.name}
+                className="h-80 object-contain mx-auto rounded-lg"
+              />
+            )}
 
-      {
-        // #region Presenters
-      }
-      <section
-        className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
-        style={{
-          backgroundImage: `url(${require("../../assets/img/bgrd.jpg")})`,
-        }}
-      >
-        <Row className="flex flex-col justify-center items-center">
-          <span className="text-headingColor font-bold font-arizonia text-[5rem] ">
-            Presenters
-          </span>
-          <h3 className="text-xl text-gray-700 mt-4 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo,
-            dignissimos.
-          </h3>
-        </Row>
-        <Row gutter={[18, 18]}>
-          {presenters.map((item, idx) => (
-            <Col
-              key={idx}
-              xs={{ flex: "100%" }}
-              sm={{ flex: "50%" }}
-              md={{ flex: "40%" }}
-              lg={{ flex: "30%" }}
-            >
-              <Card
-                className="shadow-spread"
-                hoverable
-                onClick={() => {
-                  setCurrUser(item);
-                  setShowProfile(true);
-                }}
-                style={{ width: 240 }}
-                cover={
-                  <img alt="example" src={item.img} className="h-[350px]" />
-                }
+            <div className="p-4 flex-grow">
+              <h2 className="text-xl font-semibold mb-2">{presenter.name}</h2>
+
+              <p className="text-gray-600">
+                <strong>Day:</strong> {presenter.day}
+              </p>
+
+              <p className="text-gray-600">
+                <strong>Type:</strong> {presenter.type}
+              </p>
+            </div>
+
+            {/* Show More button to open the modal */}
+            <div className="border-t p-4">
+              <button
+                onClick={() => openModal(presenter)}
+                className="text-blue-500 font-medium cursor-pointer"
               >
-                <Meta
-                  title={<span className="text-headingColor">{item.name}</span>}
-                  description={
-                    <span className="line-clamp-5">{item.about}</span>
-                  }
-                />
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </section>
-      {
-        //   #region Profile
-      }
-      <section className="showProfile">
-        {
-          <Profile
-            open={showProfile}
-            hideProfile={hideProfile}
-            data={currUser}
-          />
-        }
-      </section>
-    </>
+                Show More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Presenter Modal */}
+      <PresenterModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        presenter={selectedPresenter}
+      />
+    </div>
   );
-}
+};
 
 export default Presenters;
