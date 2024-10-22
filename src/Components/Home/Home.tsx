@@ -1,78 +1,93 @@
-import { Carousel } from "antd";
 import React, { useState } from "react";
 import img1 from "../../assets/img/img1.jpg";
 import img2 from "../../assets/img/img2.jpg";
 import img3 from "../../assets/img/img3.jpg";
 import img4 from "../../assets/img/img4.jpg";
+import homeData from '../../data/homeData';
 
-// Define props interface for Heading component
+
 interface HeadingProps {
   tagline: string;
   subHeading: string;
   src: string;
 }
 
+interface SectionProps {
+  tagline: string;
+  subHeading: string;
+  src: string;
+  reverse?: boolean;
+}
+
 const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src }) => {
   return (
-    <>
+    <div className="relative w-full h-screen">
       <img
-        className="w-[100%] h-[100vh] object-cover"
+        className="w-full h-full object-cover"
         src={src}
         alt="Comox Valley Programs"
       />
-      <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="absolute inset-0 flex top-[30%] left-[15%] flex-col">
-        <span className="text-headingColor font-bold font-arizonia text-[3rem]">
-          {tagline}
-        </span>
-        <span className="text-white md:text-[2rem] font-bold text-[20px]">
-          {subHeading}
-        </span>
+      <div className="absolute inset-0 flex items-center p-8 lg:pl-24">
+        {/* Semi-transparent black rectangle with rounded corners */}
+        <div className="bg-black bg-opacity-75 max-w-2xl rounded-lg p-6">
+          <h1 className="text-white font-bold text-5xl md:text-6xl">{tagline}</h1>
+          <p className="text-white text-lg md:text-xl mt-4">{subHeading}</p>
+          <a
+            href={homeData[0].callToAction.link}
+            className="mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+          >
+            {homeData[0].callToAction.text}
+          </a>
+        </div>
       </div>
-    </>
+    </div>
+  );
+};
+
+// Section component with flexible layout
+const Section: React.FC<SectionProps> = ({ tagline, subHeading, src, reverse }) => {
+  return (
+    <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center justify-between py-16 px-8 bg-white`}>
+      <div className="w-full md:w-1/2 p-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{tagline}</h2>
+        <p className="text-lg mb-6">{subHeading}</p>
+        <a
+          href={homeData[0].callToAction.link}
+          className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+        >
+          {homeData[0].callToAction.text}
+        </a>
+      </div>
+      <div className="w-full md:w-1/2 p-4">
+        <img className="w-full h-auto rounded-lg shadow-lg" src={src} alt={tagline} />
+      </div>
+    </div>
   );
 };
 
 const Home: React.FC = () => {
-  const [showProfile, setShowProfile] = useState(false);
-  const [currUser, setCurrUser] = useState(null);
-
-  const hideProfile = () => {
-    setShowProfile(false);
-  };
-
   return (
     <>
-      <Carousel effect="fade" arrows infinite autoplay data-aos="fade-up">
-        <div className="relative">
-          <Heading
-            tagline={"Comox Valley Conferences 2024"}
-            subHeading={"Highlight the year of the event and its significance."}
-            src={img1}
-          />
-        </div>
-        <div className="relative">
-          <Heading
-            tagline={"Innovative Workshops & Seminars"}
-            subHeading={"Emphasize learning opportunities at the conferences."}
-            src={img2}
-          />
-        </div>
-        <div className="relative">
-          <Heading
-            tagline={"Join Our Keynote Sessions"}
-            subHeading={"Highlight important talks or keynote speeches."}
-            src={img3}
-          />
-        </div>
-        <div className="relative">
-          <Heading
-            tagline={"Opportunities for Professional Growth"}
-            subHeading={"Encourage participants to focus on self-improvement and career development."}
-            src={img4}
-          />
-        </div>
-      </Carousel>
+      <div className="relative">
+        <Heading
+          tagline={homeData[0].headline}
+          subHeading={homeData[0].subheadline}
+          src={homeData[0].backgroundImage}
+        />
+      </div>
+      {/* Section 1 - Text on left, Image on right */}
+      <Section
+        tagline={homeData[1].headline}
+        subHeading={homeData[1].subheadline}
+        src={homeData[1].backgroundImage} 
+      />
+      {/* Section 2 - Image on left, Text on right */}
+      <Section
+        tagline={homeData[2].headline}
+        subHeading={homeData[2].subheadline}
+        src={homeData[2].backgroundImage} 
+        reverse
+      />
     </>
   );
 };
