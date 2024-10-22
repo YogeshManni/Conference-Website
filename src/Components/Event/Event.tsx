@@ -17,10 +17,10 @@ const Event: React.FC = () => {
   // Create an array of titles of selected events
   const selectedEventTitles = selectedEvents.map(({ event }) => event.title);
 
-  // Create an array of prices of selected events
+  // Create an array of prices of selected events (show "Free" for free events)
   const selectedEventPrices = selectedEvents.map(({ event, priceIndex }) => {
-    const { prices } = parseCost(event.cost);
-    return prices[priceIndex ?? 0]; // Default to the first price if priceIndex is null
+    const { isFree, prices } = parseCost(event.cost);
+    return isFree ? "Free" : prices[priceIndex ?? 0]; // Set "Free" if the event is free
   });
 
   return (
