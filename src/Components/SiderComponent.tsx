@@ -1,3 +1,5 @@
+//SiderComponent.tsx
+
 import React from "react";
 import { Layout, Menu } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
