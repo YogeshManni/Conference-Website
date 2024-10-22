@@ -27,12 +27,19 @@ const useEventCart = () => {
       );
 
       if (isAlreadySelected) {
+        // Deselect event if it is already selected
         return prevSelectedEvents.filter(
           (selectedEvent) =>
             !(selectedEvent.event === event && selectedEvent.priceIndex === priceIndex)
         );
       } else {
-        return [...prevSelectedEvents, { event, priceIndex }];
+        // Deselect any other price for this event before selecting a new one
+        return [
+          ...prevSelectedEvents.filter(
+            (selectedEvent) => selectedEvent.event !== event
+          ),
+          { event, priceIndex }
+        ];
       }
     });
   };
