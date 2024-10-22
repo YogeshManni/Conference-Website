@@ -17,6 +17,7 @@ const useEventCart = () => {
   const [selectedEvents, setSelectedEvents] = useState<
     { event: EventType; priceIndex: number | null }[]
   >([]);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   // Function to toggle event selection, now with priceIndex handling
   const toggleEventSelection = (event: EventType, priceIndex: number | null = null) => {
@@ -66,11 +67,35 @@ const useEventCart = () => {
     );
   };
 
+  // Create an array of titles of selected events
+  const selectedEventTitles = selectedEvents.map(({ event }) => event.title);
+
+  // Create an array of prices of selected events (show "Free" for free events)
+  const selectedEventPrices = selectedEvents.map(({ event, priceIndex }) => {
+    const { isFree, prices } = parseCost(event.cost);
+    return isFree ? "Free" : prices[priceIndex ?? 0]; // Set "Free" if the event is free
+  });
+
+  // Function to handle Pay button click
+  const handlePay = () => {
+    setModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return {
     selectedEvents,
     totalCost,
     toggleEventSelection,
     isEventSelected,
+    selectedEventTitles,
+    selectedEventPrices,
+    isModalOpen,
+    handlePay,
+    closeModal
   };
 };
 

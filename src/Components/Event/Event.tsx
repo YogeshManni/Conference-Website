@@ -1,10 +1,20 @@
 import React from "react";
 import { eventData, Event as EventType } from "../../data/eventData";
 import useEventCart, { parseCost } from "../../hooks/useEventCart";
+import ReviewOrder from "../ReviewOrder";
 
 const Event: React.FC = () => {
-  const { selectedEvents, totalCost, toggleEventSelection, isEventSelected } =
-    useEventCart();
+  const { 
+    selectedEvents, 
+    totalCost, 
+    toggleEventSelection, 
+    isEventSelected, 
+    selectedEventTitles, 
+    selectedEventPrices, 
+    isModalOpen, 
+    handlePay, 
+    closeModal 
+  } = useEventCart();
 
   return (
     <div>
@@ -16,7 +26,7 @@ const Event: React.FC = () => {
       {/* Events Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {eventData.map((event: EventType, index: number) => {
-          const { isFree, prices } = parseCost(event.cost); // Parse cost to determine if free or multiple prices
+          const { isFree, prices } = parseCost(event.cost);
 
           return (
             <div
@@ -34,15 +44,12 @@ const Event: React.FC = () => {
 
               <div className="p-4 flex-grow">
                 <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
-
                 <p className="text-gray-600">
                   <strong>Date & Time:</strong> {event.dateTime}
                 </p>
-
                 <p className="text-gray-600">
                   <strong>Location:</strong> {event.location}
                 </p>
-
                 {event.presenter && (
                   <p className="text-gray-600">
                     <strong>Presenter:</strong> {event.presenter}
@@ -53,11 +60,9 @@ const Event: React.FC = () => {
                     <strong>Editor:</strong> {event.editor}
                   </p>
                 )}
-
                 <p className="text-gray-600">
                   <strong>Cost:</strong> {event.cost}
                 </p>
-
                 {event.submissionDeadline && (
                   <p className="text-gray-600">
                     <strong>Submission Deadline:</strong>{" "}
@@ -74,13 +79,7 @@ const Event: React.FC = () => {
                         isEventSelected(event) ? "bg-red-500" : "bg-green-500"
                       }`}
                     >
-                      {isEventSelected(event) ? (
-                        "Deselect"
-                      ) : (
-                        <>
-                          <strong>Add to cart:</strong> Free
-                        </>
-                      )}
+                      {isEventSelected(event) ? "Deselect" : "Add to cart: Free"}
                     </button>
                   ) : (
                     prices.map((price: string, priceIndex: number) => (
@@ -93,13 +92,7 @@ const Event: React.FC = () => {
                             : "bg-green-500"
                         }`}
                       >
-                        {isEventSelected(event, priceIndex) ? (
-                          "Deselect"
-                        ) : (
-                          <>
-                            <strong>Add to cart:</strong> {price}
-                          </>
-                        )}
+                        {isEventSelected(event, priceIndex) ? "Deselect" : `Add to cart: ${price}`}
                       </button>
                     ))
                   )}
@@ -128,12 +121,25 @@ const Event: React.FC = () => {
       </div>
 
       {/* Floating Total Cost with Review Button */}
-      <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-gray-600 transition-colors duration-200">
+      <div 
+        className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-gray-600 transition-colors duration-200"
+        onClick={handlePay}
+      >
         <h2 className="text-xl font-semibold">
           Pay: ${totalCost.toFixed(2)}
         </h2>
         <p className="text-sm font-medium">Review Details</p>
       </div>
+
+      {/* Review Order Modal */}
+      {isModalOpen && (
+        <ReviewOrder 
+          titles={selectedEventTitles} 
+          prices={selectedEventPrices} 
+          totalCost={totalCost} 
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 };
