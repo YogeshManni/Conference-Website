@@ -16,6 +16,15 @@ const Event: React.FC = () => {
             key={index}
             className="bg-white rounded-lg shadow-lg h-full flex flex-col"
           >
+            {/* Event Image */}
+            {event.imageUrl && (
+              <img
+                src={event.imageUrl}
+                alt={event.title}
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+            )}
+            
             <div className="p-4 flex-grow">
               <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
 
