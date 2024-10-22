@@ -1,13 +1,23 @@
 import React from "react";
 import { eventData, Event as EventType } from "../../data/eventData";
+import useEventCart from "../../hooks/useEventCart";
 
 const Event: React.FC = () => {
+  const { selectedEvents, totalCost, toggleEventSelection } = useEventCart();
+
   return (
     <div>
       {/* Header Section */}
       <header className="bg-gray-800 py-4">
         <h1 className="text-white text-center text-3xl font-bold">Events</h1>
       </header>
+
+      {/* Display total cost */}
+      <div className="text-center mt-4">
+        <h2 className="text-xl font-semibold">
+          Total Cost: ${totalCost.toFixed(2)}
+        </h2>
+      </div>
 
       {/* Events Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
@@ -24,7 +34,7 @@ const Event: React.FC = () => {
                 className="w-full h-48 object-cover rounded-t-lg"
               />
             )}
-            
+
             <div className="p-4 flex-grow">
               <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
 
@@ -56,6 +66,16 @@ const Event: React.FC = () => {
                   <strong>Submission Deadline:</strong> {event.submissionDeadline}
                 </p>
               )}
+
+              {/* Select Button */}
+              <button
+                onClick={() => toggleEventSelection(event)}
+                className={`mt-4 px-4 py-2 rounded-lg text-white ${
+                  selectedEvents.includes(event) ? "bg-red-500" : "bg-green-500"
+                }`}
+              >
+                {selectedEvents.includes(event) ? "Deselect" : "Select"}
+              </button>
             </div>
 
             {/* Expandable Description */}
