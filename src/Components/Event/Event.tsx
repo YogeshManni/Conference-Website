@@ -77,7 +77,7 @@ const Event: React.FC = () => {
                   {isFree ? (
                     <button
                       onClick={() => toggleEventSelection(event)}
-                      className={`px-4 py-2 rounded-lg text-white ${
+                      className={`px-4 py-2 mb-2 rounded-lg text-white ${
                         isEventSelected(event) ? "bg-red-500" : "bg-green-500"
                       }`}
                     >
@@ -94,7 +94,7 @@ const Event: React.FC = () => {
                       <button
                         key={priceIndex}
                         onClick={() => toggleEventSelection(event, priceIndex)}
-                        className={`px-4 py-2 mr-2 rounded-lg text-white ${
+                        className={`px-4 py-2 mr-2 mb-2 rounded-lg text-white ${
                           isEventSelected(event, priceIndex)
                             ? "bg-red-500"
                             : "bg-green-500"
