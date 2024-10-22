@@ -32,7 +32,10 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                   checked
                   name="paymethod"
                 />
-                <label htmlFor="card" className="ml-4 flex gap-2 cursor-pointer">
+                <label
+                  htmlFor="card"
+                  className="ml-4 flex gap-2 cursor-pointer"
+                >
                   <img
                     src="https://readymadeui.com/images/visa.webp"
                     className="w-12"
@@ -57,7 +60,10 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                   id="paypal"
                   name="paymethod"
                 />
-                <label htmlFor="paypal" className="ml-4 flex gap-2 cursor-pointer">
+                <label
+                  htmlFor="paypal"
+                  className="ml-4 flex gap-2 cursor-pointer"
+                >
                   <img
                     src="https://readymadeui.com/images/paypal.webp"
                     className="w-20"
@@ -95,18 +101,19 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                   className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
                 />
               </div>
-              <div className="flex flex-wrap gap-4 mt-8">
+
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-4 mt-8">
                 <Button
                   onClick={prev}
                   type="default"
-                  className="min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]"
+                  className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]"
                 >
                   Back
                 </Button>
                 <Button
                   onClick={next}
                   type="default"
-                  className="min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
+                  className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
                 >
                   Pay ${price.toFixed(2)}
                 </Button>
@@ -118,15 +125,20 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
         {/* Payment Summary Section */}
         <div className="bg-gray-100 p-6 rounded-md">
           <div className="flex justify-center items-center">
-            <span className="text-4xl font-extrabold text-headingColor">${price.toFixed(2)}</span>
+            <span className="text-4xl font-extrabold text-headingColor">
+              ${price.toFixed(2)}
+            </span>
           </div>
           <ul className="text-gray-800 mt-8 space-y-4">
             <li className="flex flex-wrap gap-4 text-sm pb-5">
-              <span className="mx-auto"><strong>Events</strong></span>
+              <span className="mx-auto">
+                <strong>Events</strong>
+              </span>
               <span className="mx-auto whitespace-pre-line">{`${packet?.name}`}</span>
             </li>
             <li className="flex flex-wrap gap-4 text-sm">
-              Event price <span className="ml-auto font-bold">${price.toFixed(2)}</span>
+              Event price{" "}
+              <span className="ml-auto font-bold">${price.toFixed(2)}</span>
             </li>
             <li className="flex flex-wrap gap-4 text-sm">
               Tax <span className="ml-auto font-bold">${tax.toFixed(2)}</span>
