@@ -14,7 +14,8 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Breadcrumb, Button, Col, Layout, Menu, Row, theme } from "antd";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -30,6 +31,7 @@ import Event from "./Components/Event/Event";
 import Presenters from "./Components/Presenters/Presenters";
 import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
+import Register from "./Components/Register/Register";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -103,6 +105,13 @@ const App: React.FC = () => {
     setLocation(currLoc);
   }
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Global animation duration
+      once: true, // Only once animation
+    });
+  }, []);
+
   return (
     <>
       <Layout style={{ minHeight: "100vh" }} hasSider={true}>
@@ -141,10 +150,12 @@ const App: React.FC = () => {
                 <Route path="/event" element={<Event />}></Route>
                 <Route path="/presenters" element={<Presenters />}></Route>
                 <Route path="/about" element={<About />}></Route>
+                <Route path="/register/*" element={<Register />}></Route>
               </Routes>
             </div>
           </Content>
           <Footer
+            data-aos="fade-up"
             className={`${
               !collapsed ? "ml-[200px]" : "ml-[0px]"
             } pt-[100px] w-full  bg-cover bg-center py-20 pr-20`}
