@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import img1 from "../../assets/img/img1.jpg";
-import img2 from "../../assets/img/img2.jpg";
-import img3 from "../../assets/img/img3.jpg";
-import img4 from "../../assets/img/img4.jpg";
+import React from "react";
 import homeData from '../../data/homeData';
-
 
 interface HeadingProps {
   tagline: string;
@@ -47,7 +42,7 @@ const Heading: React.FC<HeadingProps> = ({ tagline, subHeading, src }) => {
 // Section component with flexible layout
 const Section: React.FC<SectionProps> = ({ tagline, subHeading, src, reverse }) => {
   return (
-    <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center justify-between py-16 px-8 bg-white`}>
+    <div className={`flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} items-center justify-between py-16 px-8 bg-white max-w-screen-xl mx-auto`}>
       <div className="w-full md:w-1/2 p-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{tagline}</h2>
         <p className="text-lg mb-6">{subHeading}</p>
