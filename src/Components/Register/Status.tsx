@@ -1,4 +1,3 @@
-// Status.tsx
 import React from "react";
 import { Result } from "antd";
 import { Link } from "react-router-dom";
@@ -6,9 +5,10 @@ import { Link } from "react-router-dom";
 interface StatusProps {
   packet: any;
   setCurrent: (current: number) => void;
+  onClose: () => void; // Add the onClose prop to close the modal
 }
 
-const Status: React.FC<StatusProps> = ({ packet, setCurrent }) => {
+const Status: React.FC<StatusProps> = ({ packet, onClose }) => {
   return (
     <Result
       status="success"
@@ -23,16 +23,19 @@ const Status: React.FC<StatusProps> = ({ packet, setCurrent }) => {
       extra={[
         <div className="flex flex-wrap gap-4 mt-8 justify-center" key="extra-buttons">
           <Link to="/">
-            <button type="button" className="min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]">
+            <button
+              type="button"
+              className="min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]"
+            >
               Go Home
             </button>
           </Link>
           <button
-            onClick={() => setCurrent(0)}
             type="button"
+            onClick={onClose} // Close the modal when this button is clicked
             className="min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
           >
-            Show Events
+            Check Out More Events
           </button>
         </div>,
       ]}
