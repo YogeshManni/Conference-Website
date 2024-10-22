@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Payment from "./Register/Payment";
+import Status from "./Register/Status";
 
 interface ReviewOrderProps {
   titles: string[]; // Array of selected event titles
@@ -15,6 +16,7 @@ const ReviewOrder: React.FC<ReviewOrderProps> = ({
   onClose,
 }) => {
   const [isPaying, setIsPaying] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0); // 0: Review, 1: Payment, 2: Status
 
   // Packet data now includes the event name and price (totalCost)
   const packet = {
@@ -23,27 +25,25 @@ const ReviewOrder: React.FC<ReviewOrderProps> = ({
   };
 
   const handleNext = () => {
-    // Handle the next step after payment
-    console.log("Proceed to the next step");
+    // Move to status page after successful payment
+    setCurrentStep(2);
   };
 
   const handlePrev = () => {
-    // Handle the previous step before payment
+    // Go back to review from payment
     setIsPaying(false);
+    setCurrentStep(0);
   };
 
   const handlePay = () => {
     setIsPaying(true); // Switch to payment screen and hide the order review
+    setCurrentStep(1);
   };
 
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[95%] lg:max-w-[800px] xl:max-w-[1000px] max-h-[90vh] overflow-y-auto">
-        {isPaying ? (
-          // Render Payment component inside the modal when "Pay Now" is clicked
-          <Payment packet={packet} prev={handlePrev} next={handleNext} />
-        ) : (
-          // Show the order review until the "Pay Now" button is clicked
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-[95%] lg:max-w-[800px] xl:max-w-[1000px]">
+        {currentStep === 0 && !isPaying && (
           <>
             <h2 className="text-xl font-bold mb-4 text-center">
               Review Your Order
@@ -73,21 +73,33 @@ const ReviewOrder: React.FC<ReviewOrderProps> = ({
             </div>
 
             {/* Pay and Close Buttons */}
-            <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:justify-between">
+            <div className="flex justify-between">
               <button
                 onClick={onClose}
-                className="w-full sm:w-auto px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600"
+                className="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600"
               >
                 Cancel
               </button>
               <button
                 onClick={handlePay}
-                className="w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
               >
                 Pay Now
               </button>
             </div>
           </>
+        )}
+
+        {currentStep === 1 && isPaying && (
+          <Payment packet={packet} prev={handlePrev} next={handleNext} />
+        )}
+
+        {currentStep === 2 && (
+          <Status
+            packet={packet}
+            setCurrent={setCurrentStep}
+            onClose={onClose}
+          />
         )}
       </div>
     </div>
