@@ -1,107 +1,73 @@
 import React from "react";
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  Card,
-  CardContent,
-  Grid,
-  Chip,
-  Stack,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { eventData, Event as EventType } from "../../data/eventData";
 
 const Event: React.FC = () => {
   return (
     <div>
       {/* Header Section */}
-      <header
-        style={{
-          textAlign: "center",
-          padding: "24px",
-          backgroundColor: "#4c51bf",
-          color: "#fff",
-        }}
-      >
-        <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>Events</h1>
+      <header className="bg-gray-800 py-4">
+        <h1 className="text-white text-center text-3xl font-bold">Events</h1>
       </header>
 
       {/* Events Grid */}
-      <Grid container spacing={3} style={{ padding: "24px" }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {eventData.map((event: EventType, index: number) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card elevation={3} style={{ height: "100%" }}>
-              <CardContent>
-                
-                <Typography variant="h6" component="div" gutterBottom>
-                  {event.title}
-                </Typography>
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-lg h-full flex flex-col"
+          >
+            <div className="p-4 flex-grow">
+              <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
 
-                
-                <Typography variant="body2" color="textSecondary">
-                  <strong>Date & Time:</strong> {event.dateTime}
-                </Typography>
+              <p className="text-gray-600">
+                <strong>Date & Time:</strong> {event.dateTime}
+              </p>
 
-                
-                <Typography variant="body2" color="textSecondary">
-                  <strong>Location:</strong> {event.location}
-                </Typography>
+              <p className="text-gray-600">
+                <strong>Location:</strong> {event.location}
+              </p>
 
-                
-                {event.presenter && (
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Presenter:</strong> {event.presenter}
-                  </Typography>
-                )}
-                {event.editor && (
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Editor:</strong> {event.editor}
-                  </Typography>
-                )}
+              {event.presenter && (
+                <p className="text-gray-600">
+                  <strong>Presenter:</strong> {event.presenter}
+                </p>
+              )}
+              {event.editor && (
+                <p className="text-gray-600">
+                  <strong>Editor:</strong> {event.editor}
+                </p>
+              )}
 
-                
-                <Typography variant="body2" color="textSecondary">
-                  <strong>Cost:</strong> {event.cost}
-                </Typography>
+              <p className="text-gray-600">
+                <strong>Cost:</strong> {event.cost}
+              </p>
 
-                
-                {event.submissionDeadline && (
-                  <Typography variant="body2" color="textSecondary">
-                    <strong>Submission Deadline:</strong>{" "}
-                    {event.submissionDeadline}
-                  </Typography>
-                )}
+              {event.submissionDeadline && (
+                <p className="text-gray-600">
+                  <strong>Submission Deadline:</strong> {event.submissionDeadline}
+                </p>
+              )}
+            </div>
 
-                {/* Expandable Description */}
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls={`panel-content-${index}`}
-                    id={`panel-header-${index}`}
-                  >
-                    <Typography>Details</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {/* Description with possible Markdown Formatting */}
-                    <Typography variant="body2">
-                      {event.description.split("\n").map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          <br />
-                        </span>
-                      ))}
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </CardContent>
-            </Card>
-          </Grid>
+            {/* Expandable Description */}
+            <div className="border-t">
+              <details className="p-4">
+                <summary className="cursor-pointer text-blue-500 font-medium">
+                  Details
+                </summary>
+                <p className="text-gray-600 mt-2">
+                  {event.description.split("\n").map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </p>
+              </details>
+            </div>
+          </div>
         ))}
-      </Grid>
-
-      {/* Optional Footer or Additional Content */}
+      </div>
     </div>
   );
 };
