@@ -12,6 +12,7 @@ import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
 
 import "./App.css";
+import Register from "./Components/Register/Register";
 
 const { Content } = Layout;
 
@@ -32,6 +33,7 @@ const App: React.FC = () => {
               <Route path="/event" element={<Event />} />
               <Route path="/presenters" element={<Presenters />} />
               <Route path="/about" element={<About />} />
+              <Route path="/register/*" element={<Register />} />
             </Routes>
           </div>
         </Content>
