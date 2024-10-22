@@ -1,7 +1,7 @@
 export const presentersData = [
   {
     name: "Dr. Tilar Mazzeo",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2022/12/Tilar-Head-Shot-200x300.jpg",
+    img: "https://i.ibb.co/k8BMvj8/img-tilar-mazzeo-enhanced.png",
     bio: `
           Dr. Tilar Mazzeo was most recently Professeure associée in the Département de littératures et langues du monde and a member of the Centre de recherche interuniversitaire sur les humanités numériques at the Université de Montréal. Dr. Mazzeo has worked in “digital humanities” since 1996, in administrative, editorial, and production capacities. She was formerly the Clara C. Piper Associate Professor of English at Colby College and has held faculty positions in the Oregon and Wisconsin state university systems.
     
@@ -26,7 +26,7 @@ export const presentersData = [
   },
   {
     name: "Judy LeBlanc",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2020/11/Judy-LB-photo-for-CVWS-rev-225x300.jpg",
+    img: "https://i.ibb.co/8jFmPhF/img-judy-leblanc.png",
     bio: `
         Judy LeBlanc completed an MFA in writing in 2012 at UVIC and has taught all genres of writing at North Island College.
   
@@ -47,7 +47,7 @@ export const presentersData = [
   },
   {
     name: "Jordan Scott",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/Jordan-Scott-rev-scaled.jpg",
+    img: "https://i.ibb.co/z79tL5T/img-Jordan-Scott.jpg",
     bio: `
         Jordan Scott is a poet and children’s author. His debut children’s book, *I Talk Like a River* (illustrated by Sydney Smith), was a New York Times best Children’s Book of 2020. *I Talk Like a River* is translated into nineteen languages and was the recipient of the American Library Association’s Schneider Family Book Award, which honors authors for the artistic expression of the disability experience. *I Talk Like a River* has won numerous international awards and was nominated for the Governor General’s Literary Prize for Young People’s Literature. 
   
@@ -64,7 +64,7 @@ export const presentersData = [
   },
   {
     name: "Robert Hilles",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/Robert-in-Green-Shirt-Oct-15-2023.jpeg",
+    img: "https://i.ibb.co/f8chkPk/img-Robert-enhanced.png",
     bio: `
         Robert Hilles won the Governor General’s Award for Poetry for *Cantos from a Small Room*. His first novel, *Raising of Voices*, won the George Bugnet Award for best novel, and his second novel, *A Gradual Ruin*, was published by Doubleday Canada.
   
@@ -87,7 +87,7 @@ export const presentersData = [
   },
   {
     name: "Susan Juby",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/Author-Photo-Susan-Juby-scaled.jpg",
+    img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png",
     bio: `
         Susan Juby’s most recent novel, *Mindful of Murder*, is a bestselling cozy mystery. It was shortlisted for the 2023 Leacock Medal for Humour. She has, in fact, been short- and long-listed for Canada’s national humour writing prize more times than any other woman in Canadian history. Fortunately, she has also won it once, for *Republic of Dirt*, saving her from becoming the Susan Lucci of the Leacock. Her first book, *Alice, I Think*, was a national bestseller adapted into a TV series on CTV, and her bestselling book, *The Woefield Poultry Collective*, remains an international fan favorite.
   
@@ -105,7 +105,7 @@ export const presentersData = [
   },
   {
     name: "JP (Jo-Anne) McLean",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/JPMcLean-Headshot.jpg",
+    img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png",
     bio: `
         JP (Jo-Anne) McLean is the author of ten books in the urban fantasy and thriller genres: three novels in her *Dark Dream* series – *Blood Mark*, *Ghost Mark*, and *Scorch Mark*; seven novels in *The Gift Legacy* – *Secret Sky*, *Hidden Enemy*, *Burning Lies*, *Lethal Waters*, *Deadly Deception*, *Wings of Prey*, and *Lover Betrayed*.
   
@@ -126,7 +126,7 @@ export const presentersData = [
   },
   {
     name: "Guy Dauncey",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/Guy-Dauncey-rev.jpg",
+    img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png",
     bio: `
         Guy Dauncey is an ecotopian futurist and author who works to develop a positive vision of a sustainable future, and to translate that vision into action. He is the author of ten books, six of which have won awards. His most recent book is an ecotopian novel, *Journey to the Future: A Better World is Possible* (2015). 
   
@@ -144,7 +144,7 @@ export const presentersData = [
   },
   {
     name: "Dave Flawse",
-    img: "https://cvwriterssociety.ca/wp-content/uploads/2023/11/Dave-Flawse-rev-scaled.jpg",
+    img: "https://i.ibb.co/rk87f45/img-Dave-Flawse-enhanced.png",
     bio: `
         Dave Flawse is an editor, freelance writer, and the publisher of VancouverIslandHistory.com. A firm believer in literary citizenship, he promotes and furthers literary arts in British Columbia with the goal of helping this robust and diverse community impact as many readers as possible. 
   
