@@ -3,7 +3,8 @@ import { eventData, Event as EventType } from "../../data/eventData";
 import useEventCart, { parseCost } from "../../hooks/useEventCart"; // Import parseCost
 
 const Event: React.FC = () => {
-  const { selectedEvents, totalCost, toggleEventSelection, isEventSelected } = useEventCart();
+  const { selectedEvents, totalCost, toggleEventSelection, isEventSelected } =
+    useEventCart();
 
   return (
     <div>
@@ -66,7 +67,8 @@ const Event: React.FC = () => {
 
                 {event.submissionDeadline && (
                   <p className="text-gray-600">
-                    <strong>Submission Deadline:</strong> {event.submissionDeadline}
+                    <strong>Submission Deadline:</strong>{" "}
+                    {event.submissionDeadline}
                   </p>
                 )}
 
@@ -79,7 +81,13 @@ const Event: React.FC = () => {
                         isEventSelected(event) ? "bg-red-500" : "bg-green-500"
                       }`}
                     >
-                      {isEventSelected(event) ? "Deselect" : "Free"}
+                      {isEventSelected(event) ? (
+                        "Deselect"
+                      ) : (
+                        <>
+                          <strong>Add to cart:</strong> Free
+                        </>
+                      )}
                     </button>
                   ) : (
                     prices.map((price: string, priceIndex: number) => (
@@ -87,10 +95,18 @@ const Event: React.FC = () => {
                         key={priceIndex}
                         onClick={() => toggleEventSelection(event, priceIndex)}
                         className={`px-4 py-2 mr-2 rounded-lg text-white ${
-                          isEventSelected(event, priceIndex) ? "bg-red-500" : "bg-green-500"
+                          isEventSelected(event, priceIndex)
+                            ? "bg-red-500"
+                            : "bg-green-500"
                         }`}
                       >
-                        {isEventSelected(event, priceIndex) ? "Deselect" : price}
+                        {isEventSelected(event, priceIndex) ? (
+                          "Deselect"
+                        ) : (
+                          <>
+                            <strong>Add to cart:</strong> {price}
+                          </>
+                        )}
                       </button>
                     ))
                   )}
