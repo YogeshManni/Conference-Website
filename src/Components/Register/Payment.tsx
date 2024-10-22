@@ -122,8 +122,8 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
           </div>
           <ul className="text-gray-800 mt-8 space-y-4">
             <li className="flex flex-wrap gap-4 text-sm pb-5">
-              <span className="mx-auto">Event Name</span>
-              <span className="mx-auto font-bold whitespace-pre-line">{`${packet?.name}`}</span>
+              <span className="mx-auto"><strong>Events</strong></span>
+              <span className="mx-auto whitespace-pre-line">{`${packet?.name}`}</span>
             </li>
             <li className="flex flex-wrap gap-4 text-sm">
               Event price <span className="ml-auto font-bold">${price.toFixed(2)}</span>
