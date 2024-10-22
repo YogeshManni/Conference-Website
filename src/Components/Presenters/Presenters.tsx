@@ -35,7 +35,7 @@ const Presenters: React.FC = () => {
               <img
                 src={presenter.img}
                 alt={presenter.name}
-                className="h-80 object-contain mx-auto rounded-lg"
+                className="rounded-t-lg"
               />
             )}
 

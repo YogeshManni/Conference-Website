@@ -1,7 +1,7 @@
 export const presentersData = [
   {
     name: "Dr. Tilar Mazzeo",
-    img: "https://i.ibb.co/k8BMvj8/img-tilar-mazzeo-enhanced.png",
+    img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg",
     bio: `
           Dr. Tilar Mazzeo was most recently Professeure associée in the Département de littératures et langues du monde and a member of the Centre de recherche interuniversitaire sur les humanités numériques at the Université de Montréal. Dr. Mazzeo has worked in “digital humanities” since 1996, in administrative, editorial, and production capacities. She was formerly the Clara C. Piper Associate Professor of English at Colby College and has held faculty positions in the Oregon and Wisconsin state university systems.
     
@@ -26,7 +26,7 @@ export const presentersData = [
   },
   {
     name: "Judy LeBlanc",
-    img: "https://i.ibb.co/8jFmPhF/img-judy-leblanc.png",
+    img: "https://i.ibb.co/GRrVY2x/img-judy-leblanc.png",
     bio: `
         Judy LeBlanc completed an MFA in writing in 2012 at UVIC and has taught all genres of writing at North Island College.
   
@@ -47,7 +47,7 @@ export const presentersData = [
   },
   {
     name: "Jordan Scott",
-    img: "https://i.ibb.co/z79tL5T/img-Jordan-Scott.jpg",
+    img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg",
     bio: `
         Jordan Scott is a poet and children’s author. His debut children’s book, *I Talk Like a River* (illustrated by Sydney Smith), was a New York Times best Children’s Book of 2020. *I Talk Like a River* is translated into nineteen languages and was the recipient of the American Library Association’s Schneider Family Book Award, which honors authors for the artistic expression of the disability experience. *I Talk Like a River* has won numerous international awards and was nominated for the Governor General’s Literary Prize for Young People’s Literature. 
   
