@@ -52,7 +52,7 @@ const ReviewOrder: React.FC<ReviewOrderProps> = ({
               {titles.map((title, index) => (
                 <div key={index} className="flex justify-between items-center mb-3">
                   <span className="text-lg">{title}</span>
-                  <span className="text-lg font-semibold">{prices[index]}</span>
+                  <span className="text-lg">{prices[index]}</span>
                 </div>
               ))}
             </div>
