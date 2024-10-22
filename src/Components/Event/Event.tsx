@@ -1,6 +1,6 @@
 import React from "react";
 import { eventData, Event as EventType } from "../../data/eventData";
-import useEventCart, { parseCost } from "../../hooks/useEventCart"; // Import parseCost
+import useEventCart, { parseCost } from "../../hooks/useEventCart";
 
 const Event: React.FC = () => {
   const { selectedEvents, totalCost, toggleEventSelection, isEventSelected } =

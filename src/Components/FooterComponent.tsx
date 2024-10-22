@@ -1,3 +1,5 @@
+//FooterComponent.tsx
+
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import {
@@ -25,7 +27,10 @@ const FooterComponent: React.FC<{ collapsed: boolean }> = ({ collapsed }) => {
             About us
           </h2>
           <p className="text-gray-500 text-[20px]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            The Comox Valley Writers Society (CVWS) normally meets every month
+            from September to June to educate its members on the subject of
+            writing and support them in their endeavours with the written word
+            from concept through to completion.
           </p>
         </Col>
         <Col span={8}>
