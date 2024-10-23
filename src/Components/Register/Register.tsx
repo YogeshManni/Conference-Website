@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import Payment from "./Payment";
 import Status from "./Status";
 import { UserOutlined, FormOutlined, DollarOutlined } from "@ant-design/icons";
+import { getPacket } from "../../assets/lib/helper";
 
 function Register() {
   const [current, setCurrent] = useState(0);
@@ -20,6 +21,14 @@ function Register() {
   useEffect(() => {
     const idx = location.pathname.split("/")[2];
     setActiveIndex(Number(idx));
+
+    // set payment data by default, so if user click proceed without clicking it doesn't give error
+    setPacket(
+      getPacket(
+        { name: events[Number(idx)].name, price: events[Number(idx)].price },
+        Number(idx)
+      )
+    );
   }, [location.pathname]);
 
   const RegisterComp = () => {
@@ -47,10 +56,7 @@ function Register() {
                 }`}
                 onClick={() => {
                   handleDivClick(idx);
-                  const packet = {
-                    price: item.price,
-                    name: `${item.name} - Day ${idx + 1}`,
-                  };
+                  const packet = getPacket(item, idx);
                   setPacket(packet);
                 }}
               >
@@ -114,15 +120,7 @@ function Register() {
               type="button"
               className="h-[50px] min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]"
               onClick={() => {
-                const packet = {
-                  price: events.reduce(
-                    (acc, item) => acc + (item?.price ?? 0),
-                    0
-                  ),
-                  name: events
-                    .map((item, idx) => `${item.name} - Day ${idx + 1}`)
-                    .join("\n"),
-                };
+                const packet = getPacket();
                 setPacket(packet);
                 next();
               }}
