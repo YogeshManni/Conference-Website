@@ -1,6 +1,7 @@
 import { Button, Col, Collapse, List, Row } from "antd";
 import React from "react";
 import { programs } from "../../assets/lib/data";
+import { Link } from "react-router-dom";
 
 function Programs() {
   return (
@@ -99,9 +100,11 @@ function Programs() {
       ))}
 
       <div className="flex justify-center items-center mt-5">
-        <Button className="bg-headingColor text-white onhover" size="large">
-          View All Programs
-        </Button>
+        <Link to="/event">
+          <Button className="bg-headingColor text-white onhover" size="large">
+            View All Programs
+          </Button>
+        </Link>
       </div>
     </section>
   );
