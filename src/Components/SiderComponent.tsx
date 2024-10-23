@@ -3,7 +3,7 @@
 import React from "react";
 import { Layout, Menu } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getItem, items, MenuKeys } from "./MenuItems";
+import { items, MenuKeys } from "./MenuItems";
 import LogoComponent from "./LogoComponent";
 
 const { Sider } = Layout;
@@ -20,7 +20,7 @@ const SiderComponent: React.FC<{ collapsed: boolean; setCollapsed: any }> = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  console.log(location);
   const menuClick = (e: any) => {
     let data: any = items[e.key];
     navigate(data.route);
@@ -39,7 +39,7 @@ const SiderComponent: React.FC<{ collapsed: boolean; setCollapsed: any }> = ({
       <Menu
         onClick={menuClick}
         theme="dark"
-        selectedKeys={[MenuKeys[location.pathname] || "0"]}
+        selectedKeys={[MenuKeys[`/${location.pathname.split("/")[1]}`] || "0"]}
         mode="inline"
         items={items}
       />
