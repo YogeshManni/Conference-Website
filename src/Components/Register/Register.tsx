@@ -4,7 +4,12 @@ import { events } from "../../assets/lib/data";
 import { Link, useLocation } from "react-router-dom";
 import Payment from "./Payment";
 import Status from "./Status";
-import { UserOutlined, FormOutlined, DollarOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  FormOutlined,
+  DollarOutlined,
+  CheckCircleOutlined,
+} from "@ant-design/icons";
 import { getPacket } from "../../assets/lib/helper";
 
 function Register() {
@@ -157,7 +162,7 @@ function Register() {
           onClose={() => setCurrent(0)}
         />
       ),
-      icon: <DollarOutlined />,
+      icon: <CheckCircleOutlined />,
     },
   ];
 
