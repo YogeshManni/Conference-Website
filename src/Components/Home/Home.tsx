@@ -66,6 +66,7 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <div
+      data-aos="fade-up"
       className={`flex flex-col md:flex-row ${
         reverse ? "md:flex-row-reverse" : ""
       } items-center justify-between py-16 px-8 bg-white max-w-screen-xl mx-auto`}

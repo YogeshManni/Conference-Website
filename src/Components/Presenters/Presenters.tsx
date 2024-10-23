@@ -3,10 +3,12 @@ import { presentersData } from "../../data/presentersData";
 import PresenterModal from "./PresenterModal";
 
 const Presenters: React.FC = () => {
-  const [selectedPresenter, setSelectedPresenter] = useState<null | typeof presentersData[0]>(null);
+  const [selectedPresenter, setSelectedPresenter] = useState<
+    null | (typeof presentersData)[0]
+  >(null);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const openModal = (presenter: typeof presentersData[0]) => {
+  const openModal = (presenter: (typeof presentersData)[0]) => {
     setSelectedPresenter(presenter);
     setModalOpen(true);
   };
@@ -20,13 +22,16 @@ const Presenters: React.FC = () => {
     <div>
       {/* Header Section */}
       <header className="bg-gray-800 py-4">
-        <h1 className="text-white text-center text-3xl font-bold">Presenters</h1>
+        <h1 className="text-white text-center text-3xl font-bold">
+          Presenters
+        </h1>
       </header>
 
       {/* Presenters Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 lg:gap-6 lg:p-6">
         {presentersData.map((presenter, index) => (
           <div
+            data-aos="fade-up"
             key={index}
             className="bg-white rounded-lg shadow-lg h-full flex flex-col"
           >

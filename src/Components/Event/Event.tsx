@@ -4,16 +4,16 @@ import useEventCart, { parseCost } from "../../hooks/useEventCart";
 import ReviewOrder from "../ReviewOrder";
 
 const Event: React.FC = () => {
-  const { 
-    selectedEvents, 
-    totalCost, 
-    toggleEventSelection, 
-    isEventSelected, 
-    selectedEventTitles, 
-    selectedEventPrices, 
-    isModalOpen, 
-    handlePay, 
-    closeModal 
+  const {
+    selectedEvents,
+    totalCost,
+    toggleEventSelection,
+    isEventSelected,
+    selectedEventTitles,
+    selectedEventPrices,
+    isModalOpen,
+    handlePay,
+    closeModal,
   } = useEventCart();
 
   return (
@@ -30,6 +30,7 @@ const Event: React.FC = () => {
 
           return (
             <div
+              data-aos="fade-up"
               key={index}
               className="bg-white rounded-lg shadow-lg h-full flex flex-col"
             >
@@ -79,7 +80,9 @@ const Event: React.FC = () => {
                         isEventSelected(event) ? "bg-red-500" : "bg-green-500"
                       }`}
                     >
-                      {isEventSelected(event) ? "Deselect" : "Add to cart: Free"}
+                      {isEventSelected(event)
+                        ? "Deselect"
+                        : "Add to cart: Free"}
                     </button>
                   ) : (
                     prices.map((price: string, priceIndex: number) => (
@@ -92,7 +95,9 @@ const Event: React.FC = () => {
                             : "bg-green-500"
                         }`}
                       >
-                        {isEventSelected(event, priceIndex) ? "Deselect" : `Add to cart: ${price}`}
+                        {isEventSelected(event, priceIndex)
+                          ? "Deselect"
+                          : `Add to cart: ${price}`}
                       </button>
                     ))
                   )}
@@ -121,22 +126,20 @@ const Event: React.FC = () => {
       </div>
 
       {/* Floating Total Cost with Review Button */}
-      <div 
+      <div
         className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-gray-600 transition-colors duration-200"
         onClick={handlePay}
       >
-        <h2 className="text-xl font-semibold">
-          Pay: ${totalCost.toFixed(2)}
-        </h2>
+        <h2 className="text-xl font-semibold">Pay: ${totalCost.toFixed(2)}</h2>
         <p className="text-sm font-medium">Review Details</p>
       </div>
 
       {/* Review Order Modal */}
       {isModalOpen && (
-        <ReviewOrder 
-          titles={selectedEventTitles} 
-          prices={selectedEventPrices} 
-          totalCost={totalCost} 
+        <ReviewOrder
+          titles={selectedEventTitles}
+          prices={selectedEventPrices}
+          totalCost={totalCost}
           onClose={closeModal}
         />
       )}
