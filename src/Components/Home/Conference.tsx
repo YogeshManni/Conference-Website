@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 const Conference: React.FC = () => {
   return (
     <section
-      className="w-full py-20 md:py-10 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
+      className="w-full py-20 md:py-15 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
       style={{
         backgroundImage: `url(${require("../../assets/img/bgrd.jpg")})`,
       }}
     >
       <Row className="flex flex-col justify-center items-center">
-        <span className="text-headingColor font-bold font-arizonia text-[5rem] ">
+        <span className="text-headingColor font-bold font-arizonia text-5xl ">
           Conferences
         </span>
         <h3 className="text-xl text-gray-700 mt-4 mb-8">
