@@ -10,8 +10,7 @@ function Programs() {
           Programs
         </span>
         <h3 className="text-xl text-gray-700 mt-4 mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo,
-          dignissimos.
+          Featured Events and Workshops at the Writing Conference
         </h3>
       </Row>
 
