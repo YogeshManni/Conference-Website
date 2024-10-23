@@ -115,7 +115,7 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                   type="default"
                   className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
                 >
-                  Pay ${price.toFixed(2)}
+                  Pay ${total.toFixed(2)}
                 </Button>
               </div>
             </div>
@@ -126,7 +126,7 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
         <div className="bg-gray-100 p-6 rounded-md">
           <div className="flex justify-center items-center">
             <span className="text-4xl font-extrabold text-headingColor">
-              ${price.toFixed(2)}
+              ${total.toFixed(2)}
             </span>
           </div>
           <ul className="text-gray-800 mt-8 space-y-4">
