@@ -87,11 +87,11 @@ export const programs = [
     location: "Stan Hagen Theatre in Komoux Hall",
     items: [
       {
-        img: "",
+        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
         time: "7:00 – 8:30 p.m.",
         title:
           "Welcome from CV Writers Society President & North Island College Liaison",
-        speaker: "Dr. Tilar Mazzeo",
+        name: "Dr. Tilar Mazzeo",
         description:
           "The Nonfiction Contract: Fact-based Writing and the Limits of the Imagination.",
         cost: "Free",
@@ -104,45 +104,51 @@ export const programs = [
     location: "NIC Courtenay campus, Tyee Hall",
     items: [
       {
+        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
         time: "8:30 – 8:55 a.m.",
         title: "In-person registration, networking",
+        name: "Jordan Scott",
         description: "",
         cost: "Free",
       },
       {
+        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
         time: "9:00 – 12:00 p.m.",
         title: "Workshop sessions",
+        name: "Dr. Tilar Mazzeo",
         description: "Various workshop sessions across different rooms.",
         cost: "Varies",
       },
       {
-        time: "12:00 – 1:30 p.m.",
-        title: "Lunch break",
-        description: "Brown bag lunch, restaurants in area.",
-        cost: "Free",
-      },
-      {
+        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
         time: "12:30 – 1:15 p.m.",
         title: "Lunch discussion with Jordan Scott – children’s author",
+        name: "Jordan Scott",
         description:
           "Bring your brown bag lunch and join a discussion on Children’s Literature.",
         cost: "Free",
       },
       {
+        img: "https://i.ibb.co/f8chkPk/img-Robert-enhanced.png", // Robert Hilles
         time: "1:30 – 3:30 p.m.",
         title: "Afternoon workshop sessions (5-hour workshops)",
+        name: "Robert Hilles",
         description: "Various workshop sessions.",
         cost: "$52.00",
       },
       {
+        img: "https://i.ibb.co/GRrVY2x/img-judy-leblanc.png", // Judy LeBlanc
         time: "1:30 – 4:30 p.m.",
         title: "Afternoon workshop sessions (3-hour workshops)",
+        name: "Judy LeBlanc",
         description: "Various workshop sessions.",
         cost: "$32.00",
       },
       {
+        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
         time: "4:30 – 5:00 p.m.",
         title: "Wrap-up and Networking",
+        name: "Susan Juby",
         description: "Wrap-up the day with final networking sessions.",
         cost: "Free",
       },
@@ -153,38 +159,42 @@ export const programs = [
     location: "NIC Courtenay campus, Tyee Hall",
     items: [
       {
+        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
         time: "8:30 – 8:55 a.m.",
         title: "In-person registration, networking",
+        name: "Guy Dauncey",
         description: "",
         cost: "Free",
       },
       {
+        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
         time: "9:00 – 12:00 p.m.",
         title: "Workshop sessions",
+        name: "JP (Jo-Anne) McLean",
         description: "Various workshop sessions across different rooms.",
         cost: "Varies",
       },
       {
-        time: "12:00 – 1:30 p.m.",
-        title: "Lunch break",
-        description: "Brown bag lunch, restaurants in area.",
-        cost: "Free",
-      },
-      {
+        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
         time: "1:30 – 3:30 p.m.",
         title: "Afternoon workshop sessions (5-hour workshops)",
+        name: "Guy Dauncey",
         description: "Various workshop sessions.",
         cost: "$52.00",
       },
       {
+        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
         time: "1:30 – 4:30 p.m.",
         title: "Afternoon workshop sessions (3-hour workshops)",
+        name: "JP (Jo-Anne) McLean",
         description: "Various workshop sessions.",
         cost: "$32.00",
       },
       {
+        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
         time: "4:30 – 5:00 p.m.",
         title: "Wrap-up and Networking",
+        name: "Susan Juby",
         description: "Wrap-up the day with final networking sessions.",
         cost: "Free",
       },
@@ -196,33 +206,37 @@ export const programs = [
     location: "Tyee Hall Rooms 203-205",
     items: [
       {
+        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
         time: "9:00 a.m. – 3:30 p.m.",
         title: "Writing Dynamic Narrative Nonfiction",
-        speaker: "Dr. Tilar Mazzeo",
+        name: "Dr. Tilar Mazzeo",
         description:
           "This workshop focuses on how to tell a compelling story within the “nonfiction contract”, offering new techniques and writing skills.",
         cost: "$52.00",
       },
       {
+        img: "https://i.ibb.co/GRrVY2x/img-judy-leblanc.png", // Judy LeBlanc
         time: "9:00 a.m. – 12:00 p.m.",
         title: "Telling Your Truth",
-        speaker: "Judy LeBlanc",
+        name: "Judy LeBlanc",
         description:
           "Participants will engage in discussions and exercises to develop a 'persona' in the narrating voice, with a focus on personal narrative.",
         cost: "$32.00",
       },
       {
+        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
         time: "12:30 p.m. – 1:15 p.m.",
         title: "Lunch discussion on Children’s Literature",
-        speaker: "Jordan Scott",
+        name: "Jordan Scott",
         description:
           "Bring your brown bag lunch and join us for a lunch hour discussion of children’s literature.",
         cost: "Free",
       },
       {
+        img: "https://i.ibb.co/f8chkPk/img-Robert-enhanced.png", // Robert Hilles
         time: "1:30 p.m. – 4:30 p.m.",
         title: "Flash Fiction: Make it Happen Fast",
-        speaker: "Robert Hilles",
+        name: "Robert Hilles",
         description:
           "Robert Hilles will discuss the secrets to writing fiction in the miniature, focusing on key elements to make flash fiction work.",
         cost: "$32.00",
@@ -235,67 +249,31 @@ export const programs = [
     location: "Tyee Hall Rooms 202-205",
     items: [
       {
+        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
         time: "9:00 a.m. – 3:30 p.m.",
         title: "The Intricacies of a Humourous Novel",
-        speaker: "Susan Juby",
+        name: "Susan Juby",
         description:
           "Explore how humour can be deployed in character building, scene development, dialogue, pacing, and more.",
         cost: "$52.00",
       },
       {
+        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
         time: "9:00 a.m. – 12:00 p.m.",
         title: "Writing Deeper Dialogue",
-        speaker: "JP (Jo-Anne) McLean",
+        name: "JP (Jo-Anne) McLean",
         description:
           "Discuss how to write deeper dialogue that conveys more than just words, and reveals character, heightens emotion, and advances the plot.",
         cost: "$32.00",
       },
       {
+        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
         time: "1:30 p.m. – 4:30 p.m.",
         title: "How to Become a Trusted Environmental Writer",
-        speaker: "Guy Dauncey",
+        name: "Guy Dauncey",
         description:
-          "Learn how to write a successful feature article about an environmental theme of your choosing, with support in choosing outlets and preparing a research plan.",
+          "Learn how to write a successful feature article about an environmental theme of your choosing, using impactful storytelling.",
         cost: "$32.00",
-      },
-    ],
-  },
-  // Blue Pencil Café sessions
-  {
-    date: "Saturday & Sunday – January 20 & 21, 2024",
-    location: "NIC Courtenay campus, Tyee Hall",
-    items: [
-      {
-        time: "9:00 a.m. – 9:30 a.m.",
-        title: "Blue Pencil Café Session",
-        speaker: "Dave Flawse",
-        description:
-          "A 30-minute in-person session with detailed notes on technical elements of your fiction or nonfiction writing.",
-        cost: "$62.00",
-      },
-      {
-        time: "9:45 a.m. – 10:15 a.m.",
-        title: "Blue Pencil Café Session",
-        speaker: "Dave Flawse",
-        description:
-          "A 30-minute in-person session with detailed notes on technical elements of your fiction or nonfiction writing.",
-        cost: "$62.00",
-      },
-      {
-        time: "10:30 a.m. – 11:00 a.m.",
-        title: "Blue Pencil Café Session",
-        speaker: "Dave Flawse",
-        description:
-          "A 30-minute in-person session with detailed notes on technical elements of your fiction or nonfiction writing.",
-        cost: "$62.00",
-      },
-      {
-        time: "11:15 a.m. – 11:45 a.m.",
-        title: "Blue Pencil Café Session",
-        speaker: "Dave Flawse",
-        description:
-          "A 30-minute in-person session with detailed notes on technical elements of your fiction or nonfiction writing.",
-        cost: "$62.00",
       },
     ],
   },
