@@ -72,14 +72,8 @@ function About() {
             data-aos="fade-left"
           >
             <div className="relative p-8">
-              <div className="absolute bottom-4 left-20 bg-orange-500 text-white text-center rounded-full p-2 w-3/4">
-                <h2 className="text-xl">hkjhjk</h2>
-                <span className="block text-sm uppercase tracking-widest">
-                  jlkjkls
-                </span>
-              </div>
               <img
-                src="https://i.ibb.co/QP6Nmpf/image-1-about.jpg"
+                src="https://images.unsplash.com/photo-1468487422149-5edc5034604f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="dsfs"
                 className="rounded-xl shadow-lg w-full h-[600px] object-cover"
               />
@@ -98,14 +92,8 @@ function About() {
           {/* Image Column */}
           <div className="lg:w-1/2 md:w-full sm:w-full relative">
             <div className="relative p-8">
-              <div className="absolute bottom-4 left-20 bg-orange-500 text-white text-center rounded-full p-2 w-3/4">
-                <h2 className="text-xl">hkjhjk</h2>
-                <span className="block text-sm uppercase tracking-widest">
-                  jlkjkls
-                </span>
-              </div>
               <img
-                src="./img/img3.jpg"
+                src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?q=80&w=1896&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="dsfs"
                 className="rounded-xl shadow-lg w-full h-[600px] object-cover"
               />
@@ -127,22 +115,24 @@ function About() {
                 </h2>
               </div>
               <p className="text-white text-base leading-6 mb-5 ">
-                The Comox Valley Writers Society (CVWS) normally meets every
-                month from September to June to educate its members on the
-                subject of writing and support them in their endeavours with the
-                written word from concept through to completion. However, due to
-                the COVID-19 pandemic and the restrictions imposed by the
-                Provincial Health Ministry, our monthly meetings are now being
-                held via Zoom until such time as we are allowed to meet
-                in-person once again.
+                The Comox Valley Writers Club (CVWC) began in 1964. It was
+                closely aligned with the Comox Valley Arts Council (CVAC) which
+                began in 1965. Doris Tonkin, the CVWC Chairperson was also on
+                the Board of CVAC. In the early years, membership in the group
+                was just 12 to 15 people, and they wrote largely for newspapers
+                and magazines. The Comox District Free Press and Islander
+                Magazine printed many of their stories of local history and
+                events.
               </p>
               <p className="text-white text-base leading-6 mb-5">
-                The CVWS is a proud member of the Comox Valley Community Arts
-                Council. The CVWS also supports the Writer/Artist-in-residence
-                program of the McLoughlin Gardens Society with a CVWS member
-                representative on their Board. The CVWS annually sponsors events
-                and projects to promote writers and their contribution to the
-                culture of the Comox Valley:
+                The group flourished in the 1980s. In 1985 they registered as a
+                non-profit society – the Comox Valley Writers Group (CVWG). This
+                decade featured annual National Book Week Festival events which
+                brought community attention to writers and books across the
+                country. Many well-known authors came to the valley to give
+                readings, visit schools and participate in community events. In
+                1989 CVWG celebrated 25 years with the publication of Clam
+                Diggers, an anthology of local writing.
               </p>
             </div>
           </div>
