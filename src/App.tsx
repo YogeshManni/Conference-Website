@@ -3,7 +3,6 @@ import { Layout, theme } from "antd";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import SiderComponent from "./Components/SiderComponent";
-import LogoComponent from "./Components/LogoComponent";
 import FooterComponent from "./Components/FooterComponent";
 
 import Event from "./Components/Event/Event";
