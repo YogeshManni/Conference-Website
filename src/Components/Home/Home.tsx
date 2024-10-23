@@ -2,6 +2,7 @@ import React from "react";
 import homeData from "../../data/homeData";
 
 import Conference from "./Conference";
+import Programs from "./Programs";
 
 interface HeadingProps {
   tagline: string;
@@ -116,6 +117,7 @@ const Home: React.FC = () => {
         reverse
         callToAction={homeData[2].callToAction}
       />
+      <Programs />
     </>
   );
 };
