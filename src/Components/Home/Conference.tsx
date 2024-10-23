@@ -19,11 +19,10 @@ const Conference: React.FC = () => {
     >
       <Row className="flex flex-col justify-center items-center">
         <span className="text-headingColor font-bold font-arizonia text-5xl ">
-          Conferences
+          Day Pass
         </span>
         <h3 className="text-xl text-gray-700 mt-4 mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo,
-          dignissimos.
+          Don’t Miss Out: Register for the Writing Conference!
         </h3>
       </Row>
       <Row gutter={[18, 18]}>

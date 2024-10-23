@@ -33,7 +33,7 @@ export const items: MenuItem[] = [
   getItem("Events Hub", "1", <PieChartOutlined />, "/event"),
   getItem("Presenters", "2", <DesktopOutlined />, "/presenters"),
   getItem("About", "3", <FileOutlined />, "/about"),
-  getItem("Register", "4", <UsergroupAddOutlined />, "/register/1"),
+  getItem("Day Pass", "4", <UsergroupAddOutlined />, "/register/1"),
 ];
 
 export const MenuKeys: any = {
