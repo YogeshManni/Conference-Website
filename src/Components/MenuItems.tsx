@@ -5,6 +5,8 @@ import {
   PieChartOutlined,
   DesktopOutlined,
   FileOutlined,
+  HomeOutlined,
+  UsergroupAddOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 
@@ -27,10 +29,11 @@ export function getItem(
 }
 
 export const items: MenuItem[] = [
-  getItem("Home", "0", <PieChartOutlined />, "/"),
+  getItem("Home", "0", <HomeOutlined />, "/"),
   getItem("Events Hub", "1", <PieChartOutlined />, "/event"),
   getItem("Presenters", "2", <DesktopOutlined />, "/presenters"),
   getItem("About", "3", <FileOutlined />, "/about"),
+  getItem("Register", "4", <UsergroupAddOutlined />, "/register/1"),
 ];
 
 export const MenuKeys: any = {
@@ -38,4 +41,5 @@ export const MenuKeys: any = {
   "/event": "1",
   "/presenters": "2",
   "/about": "3",
+  "/register": "4",
 };
