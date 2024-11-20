@@ -127,7 +127,7 @@ const Event: React.FC = () => {
 
       {/* Floating Total Cost with Review Button */}
       <div
-        className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-gray-600 transition-colors duration-200"
+        className="fixed bottom-4 right-4 bg-[#f15d30] text-white px-4 py-2 rounded-lg shadow-lg flex flex-col items-start space-y-1 cursor-pointer hover:bg-[#e14a26] transition-colors duration-200"
         onClick={handlePay}
       >
         <h2 className="text-xl font-semibold">Pay: ${totalCost.toFixed(2)}</h2>

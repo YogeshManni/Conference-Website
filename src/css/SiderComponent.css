@@ -1,0 +1,26 @@
+/* Sider styles */
+.custom-sider {
+    transition: all 0.3s;
+  }
+  
+
+  /* Menu item styles */
+  .custom-sider .ant-menu-item,
+  .custom-sider .ant-menu-submenu-title {
+    transition: background-color 0.3s, color 0.3s;
+    color: white; /* Ensure default text color is white */
+  }
+  
+  /* Menu item hover effect */
+  .custom-sider .ant-menu-item:hover,
+  .custom-sider .ant-menu-submenu-title:hover {
+    background-color: #f15d30 !important;
+    color: white !important; /* Ensure text remains white */
+  }
+  
+  /* Selected menu item (active state) */
+  .custom-sider .ant-menu-item-selected {
+    background-color: #f15d30 !important; /* Match hover effect for consistency */
+    color: white !important;
+  }
+  
