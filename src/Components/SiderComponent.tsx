@@ -1,10 +1,9 @@
-//SiderComponent.tsx
-
 import React from "react";
 import { Layout, Menu } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
 import { items, MenuKeys } from "./MenuItems";
 import LogoComponent from "./LogoComponent";
+import "../css/SiderComponent.css";
 
 const { Sider } = Layout;
 
@@ -14,13 +13,16 @@ const siderStyle: React.CSSProperties = {
   zIndex: 999,
 };
 
-const SiderComponent: React.FC<{ collapsed: boolean; setCollapsed: any }> = ({
-  collapsed,
-  setCollapsed,
-}) => {
+interface SiderProps {
+  collapsed: boolean;
+  setCollapsed: (collapsed: boolean) => void;
+}
+
+const SiderComponent: React.FC<SiderProps> = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
+
   const menuClick = (e: any) => {
     let data: any = items[e.key];
     navigate(data.route);
@@ -28,6 +30,7 @@ const SiderComponent: React.FC<{ collapsed: boolean; setCollapsed: any }> = ({
 
   return (
     <Sider
+      className="custom-sider"
       style={siderStyle}
       breakpoint="lg"
       collapsedWidth="0"
@@ -39,7 +42,9 @@ const SiderComponent: React.FC<{ collapsed: boolean; setCollapsed: any }> = ({
       <Menu
         onClick={menuClick}
         theme="dark"
-        selectedKeys={[MenuKeys[`/${location.pathname.split("/")[1]}`] || "0"]}
+        selectedKeys={[
+          MenuKeys[`/${location.pathname.split("/")[1]}`] || "0",
+        ]}
         mode="inline"
         items={items}
       />
