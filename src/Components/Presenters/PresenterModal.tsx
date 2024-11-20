@@ -13,13 +13,19 @@ interface PresenterModalProps {
   } | null;
 }
 
-const PresenterModal: React.FC<PresenterModalProps> = ({ isOpen, onClose, presenter }) => {
+const PresenterModal: React.FC<PresenterModalProps> = ({
+  isOpen,
+  onClose,
+  presenter,
+}) => {
   if (!isOpen || !presenter) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-md md:max-w-2xl lg:max-w-4xl mx-auto p-6"
-           style={{ maxHeight: '75%', overflowY: 'auto' }}>
+      <div
+        className="bg-white rounded-lg shadow-lg w-full max-w-md md:max-w-2xl lg:max-w-4xl mx-auto p-6"
+        style={{ maxHeight: "75%", overflowY: "auto" }}
+      >
         <button
           onClick={onClose}
           className="text-red-500 font-bold text-lg float-right"
@@ -41,10 +47,12 @@ const PresenterModal: React.FC<PresenterModalProps> = ({ isOpen, onClose, presen
           <strong>Type:</strong> {presenter.type}
         </p>
 
-            {/* Awards Section */}
+        {/* Awards Section */}
         {presenter.awards && presenter.awards.length > 0 && (
           <div className="mt-4">
-            <p className="text-gray-600 font-semibold"><strong>Awards:</strong></p>
+            <p className="text-gray-600 font-semibold">
+              <strong>Awards:</strong>
+            </p>
             <ul className="list-disc list-inside text-gray-600">
               {presenter.awards.map((award, index) => (
                 <li key={index}>{award}</li>
@@ -64,11 +72,10 @@ const PresenterModal: React.FC<PresenterModalProps> = ({ isOpen, onClose, presen
           </p>
         </div>
 
-
         <div className="mt-4 flex justify-end">
           <button
             onClick={onClose}
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
+            className="Btn hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
           >
             Close
           </button>
