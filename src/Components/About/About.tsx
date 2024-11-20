@@ -9,16 +9,34 @@ import Search from "antd/es/input/Search";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
 import { openNotificationWithIcon } from "../../assets/lib/notification";
+import { Email } from "@mui/icons-material";
 
 function About() {
   const [api, contextHolder] = notification.useNotification();
   const onFinish = (values: any) => {
+    openNotificationWithIcon(
+      api,
+      "success",
+      "Message Sent",
+      "You Message has been recieved by CVWS, someone will contact you shortly !!"
+    );
     console.log("Received values of form: ", values);
   };
 
   const onMessage = (e: any) => {
     console.log(e.target.value);
   };
+
+  const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    openNotificationWithIcon(
+      api,
+      "success",
+      "Subscribed successfully",
+      "You have been successfully subscribed to our newsletter !"
+    );
+  };
+
   return (
     <section className="py-5 bg-white">
       <div className="container mx-auto px-4">
@@ -160,7 +178,7 @@ function About() {
               </div>
 
               <div className="w-full max-lg:max-w-lg">
-                <form className="flex items-center">
+                <form className="flex items-center" onSubmit={onSubscribe}>
                   <input
                     type="email"
                     placeholder="Enter your email"
@@ -168,14 +186,7 @@ function About() {
                     required
                   />
                   <button
-                    onClick={() =>
-                      openNotificationWithIcon(
-                        api,
-                        "success",
-                        "Subscribed successfully",
-                        "You have been successfully subscribed to our newsletter !"
-                      )
-                    }
+                    type="submit"
                     className="bg-headingColor  text-white text-base font-semibold tracking-wide py-3.5 px-6 border border-blue-600 rounded-r-lg outline-none"
                   >
                     Subscribe
@@ -283,6 +294,7 @@ function About() {
                 name="email"
                 rules={[
                   { required: true, message: "Please input your email!" },
+                  { type: "email", message: "Please enter a valid email" },
                 ]}
               >
                 <Input
@@ -314,14 +326,6 @@ function About() {
                   htmlType="submit"
                   size="large"
                   className="bg-secondary"
-                  onClick={() =>
-                    openNotificationWithIcon(
-                      api,
-                      "success",
-                      "Message Sent",
-                      "You Message has been recieved by CVWS, someone will contact you shortly !!"
-                    )
-                  }
                 >
                   Send Message
                 </Button>
