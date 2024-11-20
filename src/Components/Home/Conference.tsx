@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 const Conference: React.FC = () => {
   return (
     <section
+      id="day-pass"
       className="w-full py-20 md:py-15 bg-cover bg-center pl-[50px] md:pl-[100px] pr-20 md:pr-0"
       style={{
         backgroundImage: `url(${require("../../assets/img/bgrd.jpg")})`,
