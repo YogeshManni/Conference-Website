@@ -10,21 +10,21 @@ import TextArea from "antd/es/input/TextArea";
 import React from "react";
 import { openNotificationWithIcon } from "../../assets/lib/notification";
 import { Email } from "@mui/icons-material";
+import { addToGoogleSheet } from "../Sheet";
 
 function About() {
   const [api, contextHolder] = notification.useNotification();
-  const onFinish = (values: any) => {
+  const [subEmail, setSubEmail] = React.useState<string>("");
+
+  const onFinish = async (values: any) => {
     openNotificationWithIcon(
       api,
       "success",
       "Message Sent",
       "You Message has been recieved by CVWS, someone will contact you shortly !!"
     );
-    console.log("Received values of form: ", values);
-  };
 
-  const onMessage = (e: any) => {
-    console.log(e.target.value);
+    console.log("Received values of form: ", values);
   };
 
   const onSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
@@ -35,6 +35,8 @@ function About() {
       "Subscribed successfully",
       "You have been successfully subscribed to our newsletter !"
     );
+
+    setSubEmail("");
   };
 
   return (
@@ -180,6 +182,8 @@ function About() {
               <div className="w-full max-lg:max-w-lg">
                 <form className="flex items-center" onSubmit={onSubscribe}>
                   <input
+                    value={subEmail}
+                    onChange={(e) => setSubEmail(e.target.value)}
                     type="email"
                     placeholder="Enter your email"
                     className="w-full lg:w-[300px] text-gray-800 bg-white py-3.5 px-4 text-base border border-[#ddd] border-r-0 rounded-l-lg outline-none focus:border-blue-600"
@@ -314,7 +318,6 @@ function About() {
                   showCount
                   maxLength={100}
                   className="h-[100px]"
-                  onChange={onMessage}
                   placeholder="Type in  your message..."
                   size="large"
                 />
