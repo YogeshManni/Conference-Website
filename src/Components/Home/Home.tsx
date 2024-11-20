@@ -52,6 +52,16 @@ const Heading: React.FC<HeadingProps> = ({
           </a>
         </div>
       </div>
+      <a href="#day-pass">
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-headingColor bg-opacity-80">
+            <span className="animate-bounce text-white text-4xl font-bold">
+              ↓
+            </span>
+          </div>
+          <p className="font-bold text-white text-sm mt-2">Scroll down</p>
+        </div>
+      </a>
     </div>
   );
 };
