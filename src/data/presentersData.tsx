@@ -17,7 +17,7 @@ export const presentersData = [
   },
   {
     name: "Larry Bambrick",
-    img: "",
+    img: "https://i.ibb.co/9VmLxXL/img-Larry-Bambrick-enhanced.png",
     bio: `
       Larry Bambrick has worked in the television industry for more than 30 years. His career includes writing and producing news and documentaries for the CBC, National Geographic, and the Discovery Channel. He was also a screenwriter on shows including *Flashpoint*, *Arctic Air*, *Bitten*, *Carter*, *When Hope Calls*, and *Hudson and Rex*. Recently, he finished his first movie and is trying to get it made.
 
@@ -61,18 +61,6 @@ export const presentersData = [
       "Shortlisted for The W.O. Mitchell/City of Calgary Prize",
       "Shortlisted for The Stephan Stephansson Award",
       "Shortlisted for The Howard O’Hagan Award",
-    ],
-  },
-  {
-    name: "Kim Letson",
-    img: "",
-    bio: `
-      [Bio to follow]
-    `,
-    day: "Saturday",
-    type: "Workshop Presenter",
-    awards: [
-      // No awards listed yet
     ],
   },
   {
