@@ -40,7 +40,7 @@ const Presenters: React.FC = () => {
               <img
                 src={presenter.img}
                 alt={presenter.name}
-                className="rounded-t-lg"
+                className="rounded-t-lg h-[300px]  object-cover"
               />
             )}
 

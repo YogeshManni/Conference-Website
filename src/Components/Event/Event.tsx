@@ -39,7 +39,7 @@ const Event: React.FC = () => {
                 <img
                   src={event.imageUrl}
                   alt={event.title}
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-48 object-cover rounded-t-lg "
                 />
               )}
 
