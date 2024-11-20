@@ -46,7 +46,7 @@ const Heading: React.FC<HeadingProps> = ({
           <p className="text-white text-lg md:text-xl mt-4">{subHeading}</p>
           <a
             href={callToAction.link}
-            className="mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+            className="Btn mt-8 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
           >
             {callToAction.text}
           </a>
@@ -76,7 +76,7 @@ const Section: React.FC<SectionProps> = ({
         <p className="text-lg mb-6">{subHeading}</p>
         <a
           href={callToAction.link}
-          className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+          className="Btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
         >
           {callToAction.text}
         </a>
