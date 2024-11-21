@@ -25,10 +25,11 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
   const validateForm = async (e: React.FormEvent) => {
     e.preventDefault();
     if (
-      name.trim() === "" ||
-      cardNum.trim() === "" ||
-      cvv.trim() === "" ||
-      expDate.trim() === ""
+      (name.trim() === "" ||
+        cardNum.trim() === "" ||
+        cvv.trim() === "" ||
+        expDate.trim() === "") &&
+      total > 0
     ) {
       alert("Please fill all the fields");
       return;
@@ -50,93 +51,105 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
       <div className="grid lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2 max-lg:order-1">
           <form className="mt-16 max-w-lg" onSubmit={validateForm}>
-            <h2 className="text-2xl font-bold">Payment method</h2>
-            <div className="grid gap-4 sm:grid-cols-2 mt-8">
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  className="w-5 h-5 cursor-pointer"
-                  id="card"
-                  checked
-                  name="paymethod"
-                />
-                <label
-                  htmlFor="card"
-                  className="ml-4 flex gap-2 cursor-pointer"
-                >
-                  <img
-                    src="https://readymadeui.com/images/visa.webp"
-                    className="w-12"
-                    alt="card1"
+            <h2 className="text-2xl font-bold">
+              {" "}
+              {total > 0 ? "Payment method" : "Enter your name"}
+            </h2>
+
+            {total > 0 && (
+              <div className="grid gap-4 sm:grid-cols-2 mt-8">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    className="w-5 h-5 cursor-pointer"
+                    id="card"
+                    checked
+                    name="paymethod"
                   />
-                  <img
-                    src="https://readymadeui.com/images/american-express.webp"
-                    className="w-12"
-                    alt="card2"
+                  <label
+                    htmlFor="card"
+                    className="ml-4 flex gap-2 cursor-pointer"
+                  >
+                    <img
+                      src="https://readymadeui.com/images/visa.webp"
+                      className="w-12"
+                      alt="card1"
+                    />
+                    <img
+                      src="https://readymadeui.com/images/american-express.webp"
+                      className="w-12"
+                      alt="card2"
+                    />
+                    <img
+                      src="https://readymadeui.com/images/master.webp"
+                      className="w-12"
+                      alt="card3"
+                    />
+                  </label>
+                </div>
+
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    className="w-5 h-5 cursor-pointer"
+                    id="paypal"
+                    name="paymethod"
                   />
-                  <img
-                    src="https://readymadeui.com/images/master.webp"
-                    className="w-12"
-                    alt="card3"
-                  />
-                </label>
+                  <label
+                    htmlFor="paypal"
+                    className="ml-4 flex gap-2 cursor-pointer"
+                  >
+                    <img
+                      src="https://readymadeui.com/images/paypal.webp"
+                      className="w-20"
+                      alt="paypalCard"
+                    />
+                  </label>
+                </div>
               </div>
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  className="w-5 h-5 cursor-pointer"
-                  id="paypal"
-                  name="paymethod"
-                />
-                <label
-                  htmlFor="paypal"
-                  className="ml-4 flex gap-2 cursor-pointer"
-                >
-                  <img
-                    src="https://readymadeui.com/images/paypal.webp"
-                    className="w-20"
-                    alt="paypalCard"
-                  />
-                </label>
-              </div>
-            </div>
+            )}
             <div className="grid gap-4 mt-8">
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
                 type="text"
-                placeholder="Cardholder's Name"
+                placeholder={total > 0 ? "Cardholder's Name" : "Name"}
                 className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
               />
-              <div className="flex bg-white border-b-2 focus-within:border-gray-800 overflow-hidden">
-                <input
-                  value={cardNum}
-                  onChange={(e) => setCardNum(e.target.value)}
-                  required
-                  type="number"
-                  placeholder="Card Number"
-                  className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm outline-none"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-6">
-                <input
-                  value={cvv}
-                  onChange={(e) => setCvv(e.target.value)}
-                  required
-                  type="number"
-                  placeholder="EXP."
-                  className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
-                />
-                <input
-                  value={expDate}
-                  onChange={(e) => SetExpDate(e.target.value)}
-                  required
-                  type="number"
-                  placeholder="CVV"
-                  className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
-                />
-              </div>
+
+              {total > 0 && (
+                <>
+                  <div className="flex bg-white border-b-2 focus-within:border-gray-800 overflow-hidden">
+                    <input
+                      value={cardNum}
+                      onChange={(e) => setCardNum(e.target.value)}
+                      required
+                      type="number"
+                      placeholder="Card Number"
+                      className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm outline-none"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-6">
+                    <input
+                      value={cvv}
+                      onChange={(e) => setCvv(e.target.value)}
+                      required
+                      type="number"
+                      placeholder="EXP."
+                      className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
+                    />
+                    <input
+                      value={expDate}
+                      onChange={(e) => SetExpDate(e.target.value)}
+                      required
+                      type="number"
+                      placeholder="CVV"
+                      className="px-4 py-3.5 bg-white text-gray-800 w-full text-sm border-b-2 focus:border-gray-800 outline-none"
+                    />
+                  </div>
+                </>
+              )}
 
               <div className="flex flex-col sm:flex-row sm:justify-between gap-4 mt-8">
                 <button
@@ -149,7 +162,7 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                   type="submit"
                   className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
                 >
-                  Pay ${total.toFixed(2)}
+                  {total > 0 ? `Pay ${total.toFixed(2)}` : "Register"}
                 </button>
               </div>
             </div>
