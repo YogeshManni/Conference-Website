@@ -3,7 +3,7 @@ const homeData = [
     id: 1,
     backgroundImage:
       "https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    headline: "Welcome to the 2024 North Island Writers Conference!",
+    headline: "Welcome to the 2025 North Island Writers Conference!",
     subheadline:
       "Join us for a weekend of inspiration, workshops, and connection as we gather writers, authors, and enthusiasts to explore the art of storytelling and the craft of writing.",
     callToAction: {
