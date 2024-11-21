@@ -52,7 +52,7 @@ const Heading: React.FC<HeadingProps> = ({
           </a>
         </div>
       </div>
-      <a href="#day-pass">
+      <a href="#main">
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
           <div className="w-12 h-12 flex items-center justify-center rounded-full bg-headingColor bg-opacity-80">
             <span className="animate-bounce text-white text-4xl font-bold">
@@ -76,6 +76,7 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <div
+      id="main"
       data-aos="fade-up"
       className={`flex flex-col md:flex-row ${
         reverse ? "md:flex-row-reverse" : ""
@@ -113,7 +114,6 @@ const Home: React.FC = () => {
           callToAction={homeData[0].callToAction}
         />
       </div>
-      <Conference />
 
       <Section
         tagline={homeData[1].headline}
@@ -128,6 +128,7 @@ const Home: React.FC = () => {
         reverse
         callToAction={homeData[2].callToAction}
       />
+      <Conference />
       <Programs />
     </>
   );
