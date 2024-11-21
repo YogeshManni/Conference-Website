@@ -2,7 +2,9 @@ import React from "react";
 import { Layout, Row, Col } from "antd";
 import {
   CaretRightOutlined,
+  ContactsOutlined,
   FacebookOutlined,
+  GlobalOutlined,
   InstagramOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
@@ -12,7 +14,7 @@ const { Footer } = Layout;
 const FooterComponent: React.FC<{ collapsed: boolean }> = ({ collapsed }) => {
   return (
     <Footer
-      className={`${
+      className={` ${
         !collapsed ? "ml-[200px]" : "ml-[0px]"
       } py-20 bg-cover bg-center bottom-0`}
       style={{
@@ -21,7 +23,7 @@ const FooterComponent: React.FC<{ collapsed: boolean }> = ({ collapsed }) => {
     >
       <Row
         gutter={[32, 32]}
-        justify="space-between" // This will help in spacing columns in desktop
+        justify="space-around" // This will help in spacing columns in desktop
         align="middle" // Align items in the middle for better spacing
       >
         <Col xs={24} sm={12} md={8} className="flex flex-col justify-start">
@@ -41,13 +43,23 @@ const FooterComponent: React.FC<{ collapsed: boolean }> = ({ collapsed }) => {
           </h2>
           <ul className="text-[18px] text-gray-500 cursor-pointer leading-[2]">
             <li>
-              <FacebookOutlined /> Facebook
+              <a
+                href="https://www.facebook.com/ComoxValleyWritersSociety/"
+                target="_blank"
+              >
+                <FacebookOutlined /> Facebook
+              </a>
+            </li>
+
+            <li>
+              <a href="https://cvwriterssociety.ca/" target="_blank">
+                <GlobalOutlined /> CVWS Website
+              </a>
             </li>
             <li>
-              <InstagramOutlined /> Instagram
-            </li>
-            <li>
-              <TwitterOutlined /> Twitter
+              <a href="/about#contact">
+                <ContactsOutlined /> Contact
+              </a>
             </li>
           </ul>
         </Col>
