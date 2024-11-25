@@ -1,42 +1,42 @@
 export const events = [
   {
-    img: "../img/img1.jpg",
+    img: "https://images.pexels.com/photos/1995842/pexels-photo-1995842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Comox Valley Writing Conference",
 
-    registrations: 120,
-    date: "2024-01-15",
+    registrations: 5,
+    date: "January 17, 2025",
     description:
-      "Join us for a day of inspiring talks, workshops, and networking opportunities with renowned authors and industry professionals.",
+      "Laughter may not actually be the best medicine (that would be penicillin) but humour is one of the best ways to communicate, entertain, and effect (or affect) change.",
     hosts: "CV Writers Society & North Island College",
-    location: "North Island College - Tyee hall",
-    speaker: "Dr. Jane Smith",
+    location: "Stan Hagen Theatre in Komoux Hall",
+    speaker: "Ian Ferguson",
     contact: "250-865-9856",
-    price: 80,
+    price: 0,
   },
   {
-    img: "../img/img2.jpg",
+    img: "https://images.pexels.com/photos/783737/pexels-photo-783737.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Comox Valley Writing Conference",
 
-    registrations: 75,
-    date: "2024-02-10",
+    registrations: 3,
+    date: "January 18, 2025",
     description:
-      "A week-long retreat in beautiful Bali focused on creative writing, guided by experienced authors and writing coaches.",
+      "Explore the topics like Whodunits and Punchlines: What Goes into a Comedic Mystery, ravel Guide to the Heart Through the Prose Poem and The Art of Writing a Short Story",
     hosts: "CV Writers Society & North Island College",
     location: "North Island College - Tyee hall",
-    speaker: "John Doe",
+    speaker: "Ian Ferguson, Larry Bambrick ",
     contact: "250-865-9856",
     price: 60,
   },
   {
-    img: "../img/img3.jpg",
+    img: "https://images.pexels.com/photos/831430/pexels-photo-831430.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Comox Valley Writing Conference",
-    registrations: 200,
-    date: "2024-03-20",
+    registrations: 4,
+    date: "January 19, 2025",
     description:
-      "Explore the intersection of technology and writing at this two-day symposium featuring workshops, panels, and keynotes.",
+      "Get ready to explore the topics like  Bespoke Marketing Strategies to Get You Booked & Them Hooked, Electric Elocution: Breathe Life into your Readings and From Whose Voice & From What Distance",
     hosts: "CV Writers Society & North Island College",
     location: "North Island College - Tyee hall",
-    speaker: "Emily Johnson",
+    speaker: "Judy LeBlanc, Jo-Anne and others",
     contact: "250-865-9856",
     price: 100,
   },
@@ -83,7 +83,7 @@ Judy lives in Fanny Bay where she founded The Fat Oyster Reading Series. in Fann
 
 export const programs = [
   {
-    date: "Friday night – January 19, 2024",
+    date: "Friday night – January 17, 2025",
     location: "Stan Hagen Theatre in Komoux Hall",
     items: [
       {
@@ -100,7 +100,7 @@ export const programs = [
     ],
   },
   {
-    date: "Saturday – January 20, 2024",
+    date: "Saturday – January 18, 2025",
     location: "NIC Courtenay campus, Tyee Hall",
     items: [
       {
@@ -155,7 +155,7 @@ export const programs = [
     ],
   },
   {
-    date: "Sunday – January 21, 2024",
+    date: "Sunday – January 19, 2025",
     location: "NIC Courtenay campus, Tyee Hall",
     items: [
       {
@@ -202,7 +202,7 @@ export const programs = [
   },
   // Workshops for Saturday
   {
-    date: "Saturday – January 20, 2024",
+    date: "Saturday – January 20, 2025",
     location: "Tyee Hall Rooms 203-205",
     items: [
       {
@@ -245,7 +245,7 @@ export const programs = [
   },
   // Workshops for Sunday
   {
-    date: "Sunday – January 21, 2024",
+    date: "Sunday – January 21, 2025",
     location: "Tyee Hall Rooms 202-205",
     items: [
       {
