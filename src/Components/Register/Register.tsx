@@ -121,9 +121,9 @@ function Register() {
           className="flex flex-wrap justify-center gap-4"
         >
           {current < steps.length - 1 && (
-            <button
+            <a
               type="button"
-              className="h-[50px] min-w-[150px] px-6 py-3.5 text-sm bg-secondary text-white rounded-md hover:bg-[#111]"
+              className="custom-button"
               onClick={() => {
                 const packet = getPacket();
                 setPacket(packet);
@@ -131,15 +131,15 @@ function Register() {
               }}
             >
               Register all
-            </button>
+            </a>
           )}
           {current < steps.length - 1 && (
-            <button
-              className="h-[50px] min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
+            <a
+              className="custom-button"
               onClick={next}
             >
               Proceed To Payment
-            </button>
+            </a>
           )}
         </div>
       </section>

@@ -88,9 +88,9 @@ const Conference: React.FC = () => {
 
                 <div className="flex justify-around mt-5">
                   <Link to={`/register/${idx}`}>
-                    <Button className="bg-headingColor text-white">
+                    <a className="custom-button">
                       Register
-                    </Button>
+                    </a>
                   </Link>
                 </div>
               </div>
