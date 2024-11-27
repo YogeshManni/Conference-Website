@@ -33,7 +33,7 @@ const Status: React.FC<StatusProps> = ({ packet, onClose }) => {
           <button
             type="button"
             onClick={onClose} // Close the modal when this button is clicked
-            className="min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
+            className="min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#ff8906]"
           >
             Check Out More Events
           </button>
