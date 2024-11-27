@@ -28,10 +28,11 @@ const PresenterModal: React.FC<PresenterModalProps> = ({
       >
         <button
           onClick={onClose}
-          className="text-red-500 font-bold text-lg float-right"
+          className="text-red-500 font-bold text-5xl float-right p-4"
         >
           &times;
         </button>
+
         {presenter.img && (
           <img
             src={presenter.img}
@@ -73,12 +74,9 @@ const PresenterModal: React.FC<PresenterModalProps> = ({
         </div>
 
         <div className="mt-4 flex justify-end">
-          <button
-            onClick={onClose}
-            className="Btn hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
-          >
+          <a href="#" onClick={onClose} className="custom-button">
             Close
-          </button>
+          </a>
         </div>
       </div>
     </div>
