@@ -15,7 +15,7 @@ function Programs() {
         </h3>
       </Row>
 
-      {programs.slice(0, 3).map((item, idx) => (
+      {programs.slice(0, 3).map((item: any, idx: number) => (
         <Row className="mb-10" data-aos="fade-left">
           <Col key={idx}>
             <Collapse
