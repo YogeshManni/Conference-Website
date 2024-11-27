@@ -79,8 +79,8 @@ const Event: React.FC = () => {
                   onClick={() => toggleEventSelection(event, priceIndex)}
                   className={`px-4 py-2 mr-2 mb-2 rounded-lg text-white ${
                     isEventSelected(event, priceIndex)
-                      ? "bg-[#950606]"  
-                      : "bg-[#f15d30]"  
+                      ? "bg-[#950606] hover:bg-[#f15d30]"  
+                      : "bg-[#f15d30] hover:bg-[#950606]"  
                   }`}
                 >
                   {isEventSelected(event, priceIndex)

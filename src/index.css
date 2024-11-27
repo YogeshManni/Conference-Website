@@ -28,7 +28,7 @@ code {
   overflow: hidden !important;
   z-index: 1 !important;
   font-weight: 400 !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Adds shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important; /* Adds shadow */
   border: none !important; /* Removes stroke */
 }
 
