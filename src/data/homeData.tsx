@@ -29,7 +29,7 @@ const homeData = [
       "https://images.pexels.com/photos/877971/pexels-photo-877971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     headline: "More About Us : Comox Valley Writers Society",
     subheadline:
-      "The Comox Valley Writers Society (CVWS) has supported new, emerging, and established writers in developing their craft since 1964, with some gaps in its history. With an annual membership of nearly 100 members, ranging from beginners to multi-book authors, the CVWS provides educational and inspirational presentations, critiques members’ work, and offers encouragement and assistance in achieving writing goals, including publication. Monthly meetings and special events are open to the public, reflecting the Comox Valley's long-standing history of writers across various genres.",
+      "The Comox Valley Writers Society (CVWS) has supported new, emerging, and established writers in developing their craft since 1964, with some gaps in its history. With an annual membership of nearly 100 members, ranging from beginners to multi-book authors, the CVWS provides educational and inspirational presentations, critiques members’ work, and offers encouragement and assistance in achieving writing goals, including publication.",
     callToAction: {
       text: "About us",
       link: "/about",

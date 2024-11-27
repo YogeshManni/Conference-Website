@@ -14,3 +14,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.custom-button {
+  display: inline-block !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 10rem !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.15rem !important;
+  transition: all 0.3s !important;
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  font-weight: 400 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Adds shadow */
+  border: none !important; /* Removes stroke */
+}
+
+.custom-button::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #f15d30 !important; /* Primary button color */
+  border-radius: 10rem !important;
+  z-index: -2 !important;
+}
+
+.custom-button::before {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 0% !important;
+  height: 100% !important;
+  background-color: #ff8906 !important; /* Darkened hover color */
+  transition: all 0.3s !important;
+  border-radius: 10rem !important;
+  z-index: -1 !important;
+}
+
+.custom-button:hover {
+  color: #fff !important; /* Text color on hover */
+}
+
+.custom-button:hover::before {
+  width: 100% !important; /* Expands the hover effect */
+}
+
+/* Add a media query to target small screens */
+@media (hover: none) {
+  .custom-button {
+    /* Reset any hover effects */
+    pointer-events: none;
+  }
+
+  .custom-button:hover::before,
+  .custom-button:hover {
+    /* Prevent hover effect styles */
+    color: inherit !important;
+    width: 0% !important;
+  }
+}

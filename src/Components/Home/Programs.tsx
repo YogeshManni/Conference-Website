@@ -101,9 +101,9 @@ function Programs() {
 
       <div className="flex justify-center items-center mt-5">
         <Link to="/event">
-          <Button className="bg-headingColor text-white onhover" size="large">
+          <a className="custom-button">
             View All Programs
-          </Button>
+          </a>
         </Link>
       </div>
     </section>

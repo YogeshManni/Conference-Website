@@ -160,7 +160,7 @@ const Payment: React.FC<PaymentProps> = ({ packet, prev, next }) => {
                 </button>
                 <button
                   type="submit"
-                  className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#111]"
+                  className="w-full sm:w-auto min-w-[150px] px-6 py-3.5 text-sm bg-headingColor text-white rounded-md hover:bg-[#ff8906]"
                 >
                   {total > 0 ? `Pay ${total.toFixed(2)}` : "Register"}
                 </button>
