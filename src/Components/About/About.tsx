@@ -78,7 +78,7 @@ function About() {
               <div className="mt-5">
                 <a
                   href="#contact"
-                  className="inline-block px-6 py-3 bg-headingColor text-white font-semibold rounded  transition duration-200"
+                  className="custom-button inline-block px-6 py-3 bg-headingColor text-white font-semibold rounded  transition duration-200"
                 >
                   Contact Us
                 </a>
@@ -328,7 +328,7 @@ function About() {
                   type="primary"
                   htmlType="submit"
                   size="large"
-                  className="bg-secondary"
+                  className=" bg-secondary"
                 >
                   Send Message
                 </Button>
