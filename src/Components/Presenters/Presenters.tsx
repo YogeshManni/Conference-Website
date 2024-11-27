@@ -58,12 +58,13 @@ const Presenters: React.FC = () => {
 
             {/* Show More button to open the modal */}
             <div className="border-t p-4">
-              <button
+              <a
+                href="#"
                 onClick={() => openModal(presenter)}
-                className="text-blue-500 font-medium cursor-pointer"
+                className="custom-button text-blue-500 font-medium cursor-pointer"
               >
                 Show More
-              </button>
+              </a>
             </div>
           </div>
         ))}
