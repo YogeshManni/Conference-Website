@@ -81,199 +81,124 @@ Judy lives in Fanny Bay where she founded The Fat Oyster Reading Series. in Fann
   },
 ];
 
-export const programs = [
+export const programs: any = [
   {
     date: "Friday night – January 17, 2025",
-    location: "Stan Hagen Theatre in Komoux Hall",
+    location: "Stan Hagen Theatre in K’ómoux Hall",
     items: [
       {
-        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
+        img: "https://i.ibb.co/XZYTnVf/img-Ian-Ferguson.jpg",
         time: "7:00 – 8:30 p.m.",
         title:
           "Welcome from CV Writers Society President & North Island College Liaison",
-        name: "Dr. Tilar Mazzeo",
+        name: "Ian Ferguson",
         description:
-          "The Nonfiction Contract: Fact-based Writing and the Limits of the Imagination.",
+          "Keynote speaker Ian Ferguson presents *How to be a Humour Being*, exploring the role of humour in bridging gaps and communicating effectively. Ian will also share funny stories and anecdotes.",
         cost: "Free",
         notes: "Free and open to the public.",
       },
     ],
   },
   {
-    date: "Saturday – January 18, 2025",
-    location: "NIC Courtenay campus, Tyee Hall",
+    date: "Saturday morning – January 18, 2025",
+    location: "NIC Comox Valley Campus, Tyee Hall",
     items: [
       {
-        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
+        img: "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=612x612&w=0&k=20&c=A7z3OK0fElK3tFntKObma-3a7PyO8_2xxW0jtmjzT78=",
         time: "8:30 – 8:55 a.m.",
-        title: "In-person registration, networking",
-        name: "Jordan Scott",
-        description: "",
-        cost: "Free",
-      },
-      {
-        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
-        time: "9:00 – 12:00 p.m.",
-        title: "Workshop sessions",
-        name: "Dr. Tilar Mazzeo",
-        description: "Various workshop sessions across different rooms.",
-        cost: "Varies",
-      },
-      {
-        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
-        time: "12:30 – 1:15 p.m.",
-        title: "Lunch discussion with Jordan Scott – children’s author",
-        name: "Jordan Scott",
+        title: "Late Registration & Networking",
+        name: "N/A",
         description:
-          "Bring your brown bag lunch and join a discussion on Children’s Literature.",
+          "Late registration and an opportunity to network with writers and presenters before the morning workshop sessions.",
         cost: "Free",
+        notes: "",
       },
       {
-        img: "https://i.ibb.co/f8chkPk/img-Robert-enhanced.png", // Robert Hilles
-        time: "1:30 – 3:30 p.m.",
-        title: "Afternoon workshop sessions (5-hour workshops)",
-        name: "Robert Hilles",
-        description: "Various workshop sessions.",
+        img: "https://i.ibb.co/XZYTnVf/img-Ian-Ferguson.jpg",
+        time: "9:00 a.m. – 3:00 p.m.",
+        title: "Whodunits and Punchlines: What Goes into a Comedic Mystery",
+        name: "Ian Ferguson",
+        description:
+          "This 5-hour workshop covers structuring plots, outlining, and using humour to enhance readability. Includes hands-on exercises to develop skills in creating comedic mysteries.",
         cost: "$52.00",
+        notes: "",
       },
       {
-        img: "https://i.ibb.co/GRrVY2x/img-judy-leblanc.png", // Judy LeBlanc
-        time: "1:30 – 4:30 p.m.",
-        title: "Afternoon workshop sessions (3-hour workshops)",
-        name: "Judy LeBlanc",
-        description: "Various workshop sessions.",
-        cost: "$32.00",
-      },
-      {
-        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
-        time: "4:30 – 5:00 p.m.",
-        title: "Wrap-up and Networking",
-        name: "Susan Juby",
-        description: "Wrap-up the day with final networking sessions.",
-        cost: "Free",
-      },
-    ],
-  },
-  {
-    date: "Sunday – January 19, 2025",
-    location: "NIC Courtenay campus, Tyee Hall",
-    items: [
-      {
-        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
-        time: "8:30 – 8:55 a.m.",
-        title: "In-person registration, networking",
-        name: "Guy Dauncey",
-        description: "",
-        cost: "Free",
-      },
-      {
-        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
-        time: "9:00 – 12:00 p.m.",
-        title: "Workshop sessions",
-        name: "JP (Jo-Anne) McLean",
-        description: "Various workshop sessions across different rooms.",
-        cost: "Varies",
-      },
-      {
-        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
-        time: "1:30 – 3:30 p.m.",
-        title: "Afternoon workshop sessions (5-hour workshops)",
-        name: "Guy Dauncey",
-        description: "Various workshop sessions.",
+        img: "https://i.ibb.co/9VmLxXL/img-Larry-Bambrick-enhanced.png",
+        time: "9:00 a.m. – 3:00 p.m.",
+        title: "So, You Want to Write a Movie",
+        name: "Larry Bambrick",
+        description:
+          "Explore the core concepts of screenwriting through this interactive lecture, covering dialogue, character, and the three-act structure. Ideal for aspiring screenwriters.",
         cost: "$52.00",
+        notes: "",
       },
       {
-        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
-        time: "1:30 – 4:30 p.m.",
-        title: "Afternoon workshop sessions (3-hour workshops)",
-        name: "JP (Jo-Anne) McLean",
-        description: "Various workshop sessions.",
-        cost: "$32.00",
-      },
-      {
-        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
-        time: "4:30 – 5:00 p.m.",
-        title: "Wrap-up and Networking",
-        name: "Susan Juby",
-        description: "Wrap-up the day with final networking sessions.",
+        img: "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=612x612&w=0&k=20&c=A7z3OK0fElK3tFntKObma-3a7PyO8_2xxW0jtmjzT78=",
+        time: "12:10 – 12:50 p.m.",
+        title: "Lunch on the Road with a Travel Writer",
+        name: "Kim Letson",
+        description:
+          "Join Kim Letson for a discussion on transforming travel adventures into engaging stories with universal themes. Bring a brown bag lunch.",
         cost: "Free",
-      },
-    ],
-  },
-  // Workshops for Saturday
-  {
-    date: "Saturday – January 20, 2025",
-    location: "Tyee Hall Rooms 203-205",
-    items: [
-      {
-        img: "https://i.ibb.co/xYKGPBY/img-tilar-mazzeo.jpg", // Dr. Tilar Mazzeo
-        time: "9:00 a.m. – 3:30 p.m.",
-        title: "Writing Dynamic Narrative Nonfiction",
-        name: "Dr. Tilar Mazzeo",
-        description:
-          "This workshop focuses on how to tell a compelling story within the “nonfiction contract”, offering new techniques and writing skills.",
-        cost: "$52.00",
+        notes: "Lunch is not provided.",
       },
       {
-        img: "https://i.ibb.co/GRrVY2x/img-judy-leblanc.png", // Judy LeBlanc
-        time: "9:00 a.m. – 12:00 p.m.",
-        title: "Telling Your Truth",
-        name: "Judy LeBlanc",
-        description:
-          "Participants will engage in discussions and exercises to develop a 'persona' in the narrating voice, with a focus on personal narrative.",
-        cost: "$32.00",
-      },
-      {
-        img: "https://i.ibb.co/fnpKmQx/img-Jordan-Scott-enhanced.jpg", // Jordan Scott
-        time: "12:30 p.m. – 1:15 p.m.",
-        title: "Lunch discussion on Children’s Literature",
-        name: "Jordan Scott",
-        description:
-          "Bring your brown bag lunch and join us for a lunch hour discussion of children’s literature.",
-        cost: "Free",
-      },
-      {
-        img: "https://i.ibb.co/f8chkPk/img-Robert-enhanced.png", // Robert Hilles
-        time: "1:30 p.m. – 4:30 p.m.",
-        title: "Flash Fiction: Make it Happen Fast",
+        img: "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=612x612&w=0&k=20&c=A7z3OK0fElK3tFntKObma-3a7PyO8_2xxW0jtmjzT78=",
+        time: "1:00 – 4:00 p.m.",
+        title: "The Art of Writing a Short Story",
         name: "Robert Hilles",
         description:
-          "Robert Hilles will discuss the secrets to writing fiction in the miniature, focusing on key elements to make flash fiction work.",
+          "A 3-hour workshop covering the nuances of short story writing, including critiques and market insights. Participants will learn to refine their craft and submit their work.",
         cost: "$32.00",
+        notes: "",
       },
     ],
   },
-  // Workshops for Sunday
+
   {
-    date: "Sunday – January 21, 2025",
-    location: "Tyee Hall Rooms 202-205",
+    date: "Sunday afternoon – January 19, 2025",
+    location: "NIC Comox Valley Campus, Tyee Hall",
     items: [
       {
-        img: "https://i.ibb.co/nsnqp0J/img-Susan-Juby-enhanced.png", // Susan Juby
-        time: "9:00 a.m. – 3:30 p.m.",
-        title: "The Intricacies of a Humourous Novel",
-        name: "Susan Juby",
+        img: "https://i.ibb.co/Gnsz1kY/img-Diana-Kolpak-Headshot.jpg",
+        time: "12:10 – 12:50 p.m.",
+        title: "Electric Elocution: Breathe Life into Your Readings",
+        name: "Diana Kolpak",
         description:
-          "Explore how humour can be deployed in character building, scene development, dialogue, pacing, and more.",
-        cost: "$52.00",
+          "Improve your presentation skills and learn techniques to engage your audience and deliver impactful readings.",
+        cost: "Free",
+        notes: "",
       },
       {
-        img: "https://i.ibb.co/XWH2pyL/img-JPMc-Lean-enhanced.png", // JP (Jo-Anne) McLean
+        img: "https://i.ibb.co/HdbS0mX/img-Joy-Gugelar.jpg",
+        time: "1:00 – 4:00 p.m.",
+        title: "Get a (Shelf) Life: Bespoke Marketing Strategies",
+        name: "Joy Gugelar",
+        description:
+          "Create a custom marketing campaign for your book with strategies for engaging readers, booksellers, and media effectively.",
+        cost: "$32.00",
+        notes: "",
+      },
+      {
+        img: "https://i.ibb.co/1r5jxKs/img-JPMc-Lean-enhanced.png",
         time: "9:00 a.m. – 12:00 p.m.",
         title: "Writing Deeper Dialogue",
-        name: "JP (Jo-Anne) McLean",
+        name: "Jo-Anne (JP) McLean",
         description:
-          "Discuss how to write deeper dialogue that conveys more than just words, and reveals character, heightens emotion, and advances the plot.",
+          "Master the art of dialogue to reveal character, advance plot, and heighten emotion in this 3-hour workshop.",
         cost: "$32.00",
+        notes: "",
       },
       {
-        img: "https://i.ibb.co/4R59HZ3/img-Guy-Dauncey-enhanced.png", // Guy Dauncey
-        time: "1:30 p.m. – 4:30 p.m.",
-        title: "How to Become a Trusted Environmental Writer",
-        name: "Guy Dauncey",
+        img: "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=612x612&w=0&k=20&c=A7z3OK0fElK3tFntKObma-3a7PyO8_2xxW0jtmjzT78=",
+        time: "By appointment",
+        title: "Blue Pencil Café",
+        name: "Dave Flawse",
         description:
-          "Learn how to write a successful feature article about an environmental theme of your choosing, using impactful storytelling.",
-        cost: "$32.00",
+          "Receive personalized feedback on your manuscript in a 30-minute session. Ideal for fiction and nonfiction writers.",
+        cost: "$62.00 per session",
+        notes: "Submission deadline: January 12, 2025.",
       },
     ],
   },
